@@ -21,20 +21,20 @@
 
   /* ТЕЛО */
   .body { flex:1 1 auto; min-height:0; display:flex; gap:8mm; padding-top:5mm; }
-  .left { width:107mm; flex:none; display:flex; flex-direction:column; justify-content:space-between; }
+  .left { width:100mm; flex:none; display:flex; flex-direction:column; }
   .right { flex:1 1 auto; display:flex; gap:6mm; border-left:0.2mm solid #CFC8B9; padding-left:7mm; }
 
   .lbl { font-size:8pt; letter-spacing:.22em; text-transform:uppercase; font-weight:700;
           padding-bottom:1.6mm; margin-bottom:2.6mm; border-bottom:0.2mm solid #CFC8B9; }
   .blk { margin-bottom:5mm; }
 
-  /* порции */
-  .por { display:flex; align-items:center; margin-bottom:2mm; }
-  .g-por { height:7mm; width:auto; margin-right:2.4mm; }
-  .por .pl { font-size:10pt; }
-  .por .pd { flex:1; border-bottom:0.2mm dotted #C7C0B0; margin:0 2mm; transform:translateY(-1mm); }
-  .por .pp { font-size:10.5pt; font-weight:700; white-space:nowrap; }
-  .note { font-size:7pt; font-style:italic; color:#8C857A; margin-top:.6mm; }
+  /* чарка — объём и цена тесной парой (без длинных лидеров) */
+  .charka { display:grid; grid-template-columns:1fr 1fr; }
+  .charka .cc { text-align:center; padding:1mm 4mm 0; }
+  .charka .cc + .cc { border-left:0.2mm solid #E0D9CB; }
+  .g-ch { height:9mm; width:auto; }
+  .charka .cv { font-size:10.5pt; letter-spacing:.02em; margin-top:1.2mm; }
+  .charka .cp { font-size:13pt; font-weight:700; margin-top:.4mm; }
 
   /* сеты */
   .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm 2mm; }
@@ -46,8 +46,8 @@
 
   /* сигнатурные */
   .sig { display:flex; align-items:center; gap:4mm; margin-bottom:2mm; }
-  .tree-svg { width:34mm; height:auto; flex:none; }
-  .boat-svg { width:64mm; height:auto; flex:none; }
+  .tree-svg { width:39mm; height:auto; flex:none; }
+  .boat-svg { width:72mm; height:auto; flex:none; }
   .sig-cap { flex:1; }
   .sig-cap .sn { font-size:11pt; font-weight:700; }
   .sig-cap .ss { font-size:7.6pt; color:#8C857A; }
@@ -92,8 +92,10 @@
     <div class="left">
       <div class="blk">
         <div class="lbl">Чарка</div>
-        <div class="por"><svg class="g-por" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pl">25 мл</span><span class="pd"></span><span class="pp">150 ₽</span></div>
-        <div class="por"><svg class="g-por" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pl">40 мл</span><span class="pd"></span><span class="pp">230 ₽</span></div>
+        <div class="charka">
+          <div class="cc"><svg class="g-ch" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><div class="cv">25 мл</div><div class="cp">150 ₽</div></div>
+          <div class="cc"><svg class="g-ch" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><div class="cv">40 мл</div><div class="cp">230 ₽</div></div>
+        </div>
       </div>
 
       <div class="blk">
