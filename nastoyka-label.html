@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><title>ШТОФЪ — Этикетка настойки</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+  @page { size: 90mm 56mm; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#e9e4d8; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { font-family:"Lora",Georgia,serif; color:#1C1A17; }
+
+  .label { position:relative; width:90mm; height:56mm; background:#FBFAF6; overflow:hidden; }
+  .frame { position:absolute; inset:0; width:100%; height:100%; }
+  .content { position:absolute; inset:0; padding:7mm 9mm 6.5mm;
+             display:flex; flex-direction:column; align-items:center; text-align:center; }
+
+  /* айдентика */
+  .eyebrow { font-size:6.4pt; letter-spacing:.34em; text-transform:uppercase; color:#8C857A; padding-left:.34em; }
+  .word { font-size:23pt; font-weight:700; letter-spacing:.16em; line-height:1; margin:1.1mm 0 0; padding-left:.16em; }
+  .mkrow { display:flex; align-items:center; justify-content:center; gap:3mm; margin:1.6mm 0 0; }
+  .mkrow .ln { width:11mm; height:0; border-top:0.3mm solid #CFC8B9; }
+  .mk { height:5.2mm; width:auto; }
+  .kind { font-size:7pt; letter-spacing:.28em; text-transform:uppercase; color:#8C857A; margin-top:1.6mm; padding-left:.28em; }
+
+  /* поля под маркер */
+  .fields { margin-top:auto; width:100%; }
+  .fld-name { width:100%; }
+  .fld-name .line { height:0; border-bottom:0.4mm solid #1C1A17; margin:0 1mm; }
+  .fld-name .cap { font-size:5.8pt; letter-spacing:.2em; text-transform:uppercase; color:#8C857A; margin-top:1.2mm; }
+
+  .fld-abv { display:flex; align-items:flex-end; justify-content:center; gap:2.6mm; margin-top:4.4mm; }
+  .fld-abv .lbl { font-size:9pt; letter-spacing:.02em; }
+  .fld-abv .box { width:17mm; height:0; border-bottom:0.4mm solid #1C1A17; transform:translateY(-0.4mm); }
+  .fld-abv .pct { font-size:12pt; font-weight:700; }
+</style></head>
+<body>
+<div class="label" data-document-role="page">
+  <svg class="frame" viewBox="0 0 90 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M 4.40 4.40 L 6.66 4.40 L 8.91 4.45 L 11.17 4.46 L 13.42 4.49 L 15.68 4.53 L 17.93 4.46 L 20.19 4.46 L 22.44 4.50 L 24.70 4.60 L 26.96 4.47 L 29.21 4.40 L 31.47 4.27 L 33.72 4.37 L 35.98 4.43 L 38.23 4.29 L 40.49 4.44 L 42.74 4.59 L 45.00 4.64 L 47.26 4.68 L 49.51 4.57 L 51.77 4.41 L 54.02 4.42 L 56.28 4.28 L 58.53 4.18 L 60.79 4.10 L 63.04 3.98 L 65.30 3.98 L 67.56 3.98 L 69.81 4.09 L 72.07 4.10 L 74.32 4.18 L 76.58 4.23 L 78.83 4.30 L 81.09 4.33 L 83.34 4.35 L 85.60 4.40 L 85.59 6.65 L 85.52 8.90 L 85.43 11.14 L 85.46 13.39 L 85.54 15.64 L 85.61 17.89 L 85.75 20.13 L 85.66 22.38 L 85.70 24.63 L 85.59 26.88 L 85.62 29.12 L 85.48 31.37 L 85.36 33.62 L 85.52 35.87 L 85.62 38.11 L 85.49 40.36 L 85.49 42.61 L 85.38 44.86 L 85.47 47.10 L 85.57 49.35 L 85.60 51.60 L 83.34 51.56 L 81.09 51.55 L 78.83 51.59 L 76.58 51.63 L 74.32 51.51 L 72.07 51.41 L 69.81 51.53 L 67.56 51.61 L 65.30 51.74 L 63.04 51.88 L 60.79 51.79 L 58.53 51.89 L 56.28 51.87 L 54.02 51.89 L 51.77 51.99 L 49.51 51.91 L 47.26 52.02 L 45.00 51.97 L 42.74 52.02 L 40.49 52.02 L 38.23 52.02 L 35.98 52.02 L 33.72 51.87 L 31.47 51.77 L 29.21 51.83 L 26.96 51.71 L 24.70 51.80 L 22.44 51.84 L 20.19 51.72 L 17.93 51.68 L 15.68 51.77 L 13.42 51.63 L 11.17 51.67 L 8.91 51.67 L 6.66 51.62 L 4.40 51.60 L 4.33 49.35 L 4.18 47.10 L 4.04 44.86 L 4.01 42.61 L 3.98 40.36 L 4.01 38.11 L 3.98 35.87 L 3.98 33.62 L 4.13 31.37 L 4.12 29.12 L 4.15 26.88 L 4.26 24.63 L 4.16 22.38 L 4.05 20.13 L 4.18 17.89 L 4.28 15.64 L 4.20 13.39 L 4.15 11.14 L 4.27 8.90 L 4.38 6.65 Z" fill="none" stroke="#1C1A17" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  <div class="content">
+    <div class="eyebrow">Ресторан · Екатерининский</div>
+    <div class="word">ШТОФЪ</div>
+    <div class="mkrow"><span class="ln"></span><svg class="mk" viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M10 2 H14 V5 Q14 7 15.4 8.4 Q17 10 17 13 V25 Q17 28 14 28 H10 Q7 28 7 25 V13 Q7 10 8.6 8.4 Q10 7 10 5 Z"/><rect x="9.2" y="14" width="5.6" height="7.5" rx="0.6" fill="#FBFAF6"/></svg><span class="ln"></span></div>
+    <div class="kind">Фирменная настойка</div>
+
+    <div class="fields">
+      <div class="fld-name">
+        <div class="line"></div>
+        <div class="cap">название настойки</div>
+      </div>
+      <div class="fld-abv">
+        <span class="lbl">Крепость</span>
+        <span class="box"></span>
+        <span class="pct">%</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
