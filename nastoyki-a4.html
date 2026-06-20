@@ -34,7 +34,12 @@
   .pcol + .pcol { border-left:0.2mm solid #E0D9CB; padding-left:6mm; }
   .pr { display:flex; align-items:center; margin-bottom:1.7mm; }
   .g-pr { height:6mm; width:auto; margin-right:2mm; }
-  .b-pr { height:7mm; width:auto; margin-right:2.2mm; }
+  /* бутылки растут пропорционально объёму: высота(мм) = объём(л) × 10, общая база снизу */
+  .bw { display:inline-flex; align-items:flex-end; justify-content:center; width:6mm; margin-right:2.5mm; }
+  .bt05 { height:5mm; width:auto; }
+  .bt07 { height:7mm; width:auto; }
+  .bt10 { height:10mm; width:auto; }
+  .pb { align-items:flex-end; }
   .pv { font-size:9pt; white-space:nowrap; }
   .pd { flex:1; border-bottom:0.2mm dotted #C7C0B0; margin:0 1.8mm; transform:translateY(-0.8mm); min-width:2mm; }
   .pp { font-size:10.5pt; font-weight:700; white-space:nowrap; }
@@ -103,9 +108,9 @@
           </div>
           <div class="pcol">
             <div class="lbl">В бутылке</div>
-            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">0,5 л</span><span class="pd"></span><span class="pp">2 400 ₽</span></div>
-            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">0,7 л</span><span class="pd"></span><span class="pp">3 360 ₽</span></div>
-            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">1 л</span><span class="pd"></span><span class="pp">4 800 ₽</span></div>
+            <div class="pr pb"><span class="bw"><svg class="bt05" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,5 л</span><span class="pd"></span><span class="pp">2 400 ₽</span></div>
+            <div class="pr pb"><span class="bw"><svg class="bt07" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,7 л</span><span class="pd"></span><span class="pp">3 360 ₽</span></div>
+            <div class="pr pb"><span class="bw"><svg class="bt10" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">1 л</span><span class="pd"></span><span class="pp">4 800 ₽</span></div>
           </div>
         </div>
         <div class="bnote">Любую настойку можно купить в фирменной бутылке навынос</div>
