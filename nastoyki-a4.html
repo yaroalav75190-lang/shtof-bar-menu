@@ -28,13 +28,17 @@
           padding-bottom:1.6mm; margin-bottom:2.6mm; border-bottom:0.2mm solid #CFC8B9; }
   .blk { margin-bottom:5mm; }
 
-  /* чарка — объём и цена тесной парой (без длинных лидеров) */
-  .charka { display:grid; grid-template-columns:1fr 1fr; }
-  .charka .cc { text-align:center; padding:1mm 4mm 0; }
-  .charka .cc + .cc { border-left:0.2mm solid #E0D9CB; }
-  .g-ch { height:9mm; width:auto; }
-  .charka .cv { font-size:10.5pt; letter-spacing:.02em; margin-top:1.2mm; }
-  .charka .cp { font-size:13pt; font-weight:700; margin-top:.4mm; }
+  /* подача: «Чарка» и «В бутылке» двумя колонками рядом (канон планшета) */
+  .pf { display:flex; gap:6mm; }
+  .pcol { flex:1 1 0; min-width:0; }
+  .pcol + .pcol { border-left:0.2mm solid #E0D9CB; padding-left:6mm; }
+  .pr { display:flex; align-items:center; margin-bottom:1.7mm; }
+  .g-pr { height:6mm; width:auto; margin-right:2mm; }
+  .b-pr { height:7mm; width:auto; margin-right:2.2mm; }
+  .pv { font-size:9pt; white-space:nowrap; }
+  .pd { flex:1; border-bottom:0.2mm dotted #C7C0B0; margin:0 1.8mm; transform:translateY(-0.8mm); min-width:2mm; }
+  .pp { font-size:10.5pt; font-weight:700; white-space:nowrap; }
+  .bnote { font-size:6.6pt; font-style:italic; color:#8C857A; margin-top:2mm; }
 
   /* сеты */
   .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm 2mm; }
@@ -91,11 +95,20 @@
   <div class="body">
     <div class="left">
       <div class="blk">
-        <div class="lbl">Чарка</div>
-        <div class="charka">
-          <div class="cc"><svg class="g-ch" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><div class="cv">25 мл</div><div class="cp">150 ₽</div></div>
-          <div class="cc"><svg class="g-ch" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><div class="cv">40 мл</div><div class="cp">230 ₽</div></div>
+        <div class="pf">
+          <div class="pcol">
+            <div class="lbl">Чарка</div>
+            <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">25 мл</span><span class="pd"></span><span class="pp">150 ₽</span></div>
+            <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">40 мл</span><span class="pd"></span><span class="pp">230 ₽</span></div>
+          </div>
+          <div class="pcol">
+            <div class="lbl">В бутылке</div>
+            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">0,5 л</span><span class="pd"></span><span class="pp">2 400 ₽</span></div>
+            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">0,7 л</span><span class="pd"></span><span class="pp">3 360 ₽</span></div>
+            <div class="pr"><svg class="b-pr" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg><span class="pv">1 л</span><span class="pd"></span><span class="pp">4 800 ₽</span></div>
+          </div>
         </div>
+        <div class="bnote">Любую настойку можно купить в фирменной бутылке навынос</div>
       </div>
 
       <div class="blk">
