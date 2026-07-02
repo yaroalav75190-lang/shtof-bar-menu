@@ -7,7 +7,9 @@
 html,body{background:#FBFAF6}
 body{font-family:"Lora",Georgia,serif;color:#1C1A17;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:90mm;height:50mm;background:#FBFAF6;overflow:hidden;display:flex}
-.front{flex-direction:column;align-items:center;justify-content:center;padding:5mm 5mm 4.5mm 6mm;page-break-after:always}
+.front{flex-direction:column;align-items:center;padding:5mm 5mm 4.5mm 6mm;page-break-after:always}
+.face-spacer{flex:1}
+.face-note{font-size:6pt;font-style:italic;color:#8C857A;line-height:1.5;text-align:center;white-space:nowrap}
 .back{padding:5mm 5mm 4.5mm 6mm}
 .logo{width:29mm;height:auto;display:block}
 .wordmark{margin-top:1.6mm;font-size:16.5pt;font-weight:700;letter-spacing:.14em;padding-left:.14em;line-height:1;white-space:nowrap}
@@ -30,6 +32,7 @@ body{font-family:"Lora",Georgia,serif;color:#1C1A17;-webkit-print-color-adjust:e
 </style></head>
 <body>
 <div class="page front" data-document-role="page">
+  <div class="face-spacer"></div>
   <svg class="logo" viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
   <path id="arcTop" fill="none" d="M36 58 A80 80 0 0 1 164 58"/>
   <circle cx="100" cy="78" r="36" fill="none" stroke="#1C1A17" stroke-width="3"/>
@@ -49,6 +52,8 @@ body{font-family:"Lora",Georgia,serif;color:#1C1A17;-webkit-print-color-adjust:e
 </svg>
   <div class="wordmark">ШТОФЪ</div>
   <div class="front-sub">Екатерининский</div>
+  <div class="face-spacer"></div>
+  <div class="face-note">Более 56 настоек собственного производства<br>только натуральные ингредиенты</div>
 </div>
 
 <div class="page back" data-document-role="page">
