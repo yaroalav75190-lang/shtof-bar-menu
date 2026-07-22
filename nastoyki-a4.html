@@ -2,145 +2,159 @@
 <html lang="ru"><head><meta charset="UTF-8"><title>ШТОФЪ — Карта настоек</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-  @page { size: A4 landscape; margin: 0; }
+  @page { size: A4 portrait; margin: 0; }
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { background:#e9e4d8; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   body { font-family:"Lora",Georgia,serif; color:#1C1A17; }
-  .page { width:297mm; height:210mm; background:#FBFAF6; position:relative; overflow:hidden;
-           padding:12mm 14mm 9mm; display:flex; flex-direction:column; }
+  .page { width:210mm; height:297mm; background:#FBFAF6; position:relative; overflow:hidden;
+           padding:13mm 15mm 10mm; display:flex; flex-direction:column; page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
 
   /* ШАПКА */
   .head { text-align:center; }
-  .head-txt { text-align:center; }
   .kicker { font-size:7pt; letter-spacing:.42em; text-transform:uppercase; color:#8C857A; padding-left:.42em; }
-  .title { font-size:25pt; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
-            line-height:1; margin:1.4mm 0 1.6mm; padding-left:.16em; }
-  .sub { font-size:7.6pt; letter-spacing:.30em; text-transform:uppercase; color:#8C857A; padding-left:.30em; }
-  .spacer { width:24mm; flex:none; }
-  .hr { height:0; border-top:0.2mm solid #CFC8B9; margin:4mm 0 0; }
+  .title { font-size:23pt; letter-spacing:.15em; text-transform:uppercase; font-weight:700;
+            line-height:1; margin:1.6mm 0 1.8mm; padding-left:.15em; }
+  .sub { font-size:7.6pt; letter-spacing:.28em; text-transform:uppercase; color:#8C857A; padding-left:.28em; }
+  .sub2 { font-size:7.8pt; letter-spacing:.10em; text-transform:uppercase; color:#8C857A; padding-left:.10em; }
+  .hr { height:0; border-top:0.2mm solid #CFC8B9; margin:4.5mm 0 0; }
 
-  /* ТЕЛО */
-  .body { flex:1 1 auto; min-height:0; display:flex; gap:8mm; padding-top:5mm; }
-  .left { width:100mm; flex:none; display:flex; flex-direction:column; }
-  .right { flex:1 1 auto; display:flex; gap:6mm; border-left:0.2mm solid #CFC8B9; padding-left:7mm; }
+  /* ЛИЦО — секции сверху вниз, воздух распределяется между ними */
+  .fmain { flex:1 1 auto; min-height:0; display:flex; flex-direction:column;
+            justify-content:space-evenly; padding-top:2mm; }
 
-  .lbl { font-size:8pt; letter-spacing:.22em; text-transform:uppercase; font-weight:700;
-          padding-bottom:1.6mm; margin-bottom:2.6mm; border-bottom:0.2mm solid #CFC8B9; }
-  .blk { margin-bottom:3.2mm; }
+  .lbl { font-size:9.5pt; letter-spacing:.24em; text-transform:uppercase; font-weight:700;
+          padding-bottom:2.2mm; margin-bottom:4mm; border-bottom:0.2mm solid #CFC8B9; }
 
-  /* подача: «Чарка» и «В бутылке» двумя колонками рядом (канон планшета) */
-  .pf { display:flex; gap:6mm; }
+  /* подача: «Чарка» и «В бутылке» двумя колонками (единый кегль в строке — правило Canva) */
+  .pf { display:flex; gap:10mm; }
   .pcol { flex:1 1 0; min-width:0; }
-  .pcol + .pcol { border-left:0.2mm solid #E0D9CB; padding-left:6mm; }
-  .pr { display:flex; align-items:center; margin-bottom:1.7mm; }
-  .g-pr { height:6mm; width:auto; margin-right:2mm; }
-  /* бутылки растут пропорционально объёму: высота(мм) = объём(л) × 10, общая база снизу */
-  .bw { display:inline-flex; align-items:flex-end; justify-content:center; width:6mm; margin-right:2.5mm; }
-  .bt05 { height:5mm; width:auto; }
-  .bt07 { height:7mm; width:auto; }
-  .bt10 { height:10mm; width:auto; }
+  .pcol + .pcol { border-left:0.2mm solid #E0D9CB; padding-left:10mm; }
+  .pr { display:flex; align-items:center; margin-bottom:3.6mm; }
+  .g-pr { height:8mm; width:auto; margin-right:3mm; }
+  .bw { display:inline-flex; align-items:flex-end; justify-content:center; width:7.5mm; margin-right:3mm; }
+  .bt05 { height:6.5mm; width:auto; }
+  .bt07 { height:9mm; width:auto; }
+  .bt10 { height:12.5mm; width:auto; }
   .pb { align-items:flex-end; }
-  .pv { font-size:9pt; white-space:nowrap; }
-  .pd { flex:1; border-bottom:0.2mm dotted #C7C0B0; margin:0 1.8mm; transform:translateY(-0.8mm); min-width:2mm; }
-  .pp { font-size:10.5pt; font-weight:700; white-space:nowrap; }
-  .bnote { font-size:6.6pt; font-style:italic; color:#8C857A; margin-top:2mm; }
+  .pv { font-size:11pt; white-space:nowrap; }
+  .pd { flex:1; border-bottom:0.2mm dotted #C7C0B0; margin:0 2mm; transform:translateY(-1.1mm); min-width:2mm; }
+  .pp { font-size:11pt; font-weight:700; white-space:nowrap; }
+  .bnote { font-size:8pt; font-style:italic; color:#8C857A; margin-top:1mm; line-height:1.35; }
 
-  /* сеты */
-  .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm 2mm; }
+  /* дегустационные сеты: колонки по ширине контента, блок по центру */
+  .grid { display:grid; grid-template-columns:auto auto auto; justify-content:center;
+           column-gap:16mm; row-gap:7mm; }
   .cell { text-align:center; }
-  .cluster { display:flex; align-items:flex-end; justify-content:center; gap:0.5mm; height:7mm; margin-bottom:1mm; }
+  .cluster { display:flex; align-items:flex-end; justify-content:center; gap:0.6mm; height:8.5mm; margin-bottom:1.8mm; }
   .gs { height:6mm; width:auto; }
-  .cnm { font-size:7.2pt; line-height:1.1; }
-  .cpp { font-size:8.4pt; font-weight:700; margin-top:.2mm; }
+  .cnm { font-size:7.8pt; line-height:1.15; white-space:nowrap; }
+  .cpp { font-size:10pt; font-weight:700; margin-top:.5mm; }
+  .setnote { font-size:8pt; font-style:italic; color:#8C857A; margin-top:4.5mm; text-align:center; }
 
-  /* сигнатурные */
-  .sig { display:flex; align-items:center; gap:4mm; margin-bottom:1.6mm; }
-  .tree-svg { width:30mm; height:auto; flex:none; }
-  .boat-svg { width:53mm; height:auto; flex:none; }
-  .sig-cap { flex:1; }
-  .sig-cap .sn { font-size:11pt; font-weight:700; }
-  .sig-cap .ss { font-size:7.6pt; color:#8C857A; }
-  .sig-cap .sp { font-size:11pt; font-weight:700; }
+  /* сигнатурные — дерево и ладья рядом, подписи по низу */
+  .sigrow { display:flex; justify-content:center; align-items:flex-end; gap:22mm; }
+  .sig { text-align:center; }
+  .tree-svg { width:50mm; height:auto; display:block; margin:0 auto 2.4mm; }
+  .boat-svg { width:66mm; height:auto; display:block; margin:0 auto 2.4mm; }
+  .sig .sn { font-size:13pt; font-weight:700; }
+  .sig .ss { font-size:8.8pt; color:#8C857A; margin-top:.5mm; }
+  .sig .sp { font-size:13pt; font-weight:700; margin-top:.6mm; }
 
-  /* каталог */
-  .ccol { flex:1 1 0; min-width:0; }
-  .ccol + .ccol { border-left:0.2mm solid #E0D9CB; padding-left:6mm; }
-  .cat { margin-bottom:2mm; break-inside:avoid; }
-  .ch { display:flex; align-items:baseline; margin-bottom:1.1mm; }
-  .cn { font-size:7.2pt; letter-spacing:.10em; text-transform:uppercase; font-weight:700; white-space:nowrap; }
-  .cl { flex:1; height:0; border-top:0.2mm solid #D9D2C4; align-self:center; margin-left:2.4mm; }
-  .it { margin-bottom:1mm; }
-  .nm { font-size:8pt; line-height:1.05; }
-  .nm .star { font-size:6pt; color:#8C857A; vertical-align:2px; margin-left:1mm; }
-  .meta { font-size:6.6pt; line-height:1.05; color:#8C857A; margin-top:.1mm; }
-  .meta .mid { margin:0 1mm; color:#C2BAA8; }
-  .meta .abv { font-variant-numeric:tabular-nums; }
+  /* ОБОРОТ — каталог 3 колонки */
+  .cbody { flex:1 1 auto; min-height:0; display:flex; padding-top:6mm; }
+  .ccol { flex:1 1 0; min-width:0; padding-right:7mm; }
+  .ccol + .ccol { border-left:0.2mm solid #E0D9CB; padding-left:7mm; }
+  .ccol:last-child { padding-right:0; }
+  .cat { margin-bottom:5mm; break-inside:avoid; }
+  .ch { display:flex; align-items:baseline; margin-bottom:2mm; }
+  .cn { font-size:8.4pt; letter-spacing:.10em; text-transform:uppercase; font-weight:700; white-space:nowrap; }
+  .cl { flex:1; height:0; border-top:0.2mm solid #D9D2C4; align-self:center; margin-left:2.6mm; }
+  .it { margin-bottom:2.2mm; }
+  .nm { font-size:9.6pt; line-height:1.14; }
+  .nm .star { font-size:6.6pt; color:#8C857A; vertical-align:2px; margin-left:1mm; }
+  .meta { font-size:7.6pt; line-height:1.12; color:#8C857A; margin-top:.3mm; }
   .it-soon .nm { color:#AEA693; }
-  .soon { color:#AEA693; }
 
-  /* ПОДВАЛ — порядок: настойка от технолога, бренд-строка, дисклеймер аллергенов в самом низу */
-  .asknote { flex:none; margin-top:3.2mm; padding-top:2.6mm; border-top:0.2mm solid #CFC8B9;
-              text-align:center; font-size:7.4pt; font-style:italic; line-height:1.3; color:#1C1A17; }
-  .foot { flex:none; margin-top:2.2mm; text-align:center; font-size:7pt; letter-spacing:.30em;
+  /* ПОДВАЛ */
+  .asknote { flex:none; margin-top:4mm; padding-top:3mm; border-top:0.2mm solid #CFC8B9;
+              text-align:center; font-size:8.4pt; font-style:italic; line-height:1.4; color:#1C1A17;
+              padding-left:6mm; padding-right:6mm; }
+  .foot { flex:none; margin-top:2.6mm; text-align:center; font-size:7pt; letter-spacing:.30em;
            text-transform:uppercase; color:#8C857A; }
   .foot b { color:#1C1A17; font-weight:700; letter-spacing:.20em; }
-  .disclaimer { flex:none; margin-top:2.2mm; padding:0 14mm;
-                 text-align:center; font-size:6.6pt; font-style:italic; line-height:1.32; color:#8C857A; }
+  .disclaimer { flex:none; margin-top:2.4mm; padding:0 8mm;
+                 text-align:center; font-size:6.8pt; font-style:italic; line-height:1.32; color:#8C857A; }
 </style></head>
 <body>
-<div class="page" data-document-role="page">
+
+<!-- ══════════ СТРАНИЦА 1 · ЛИЦО ══════════ -->
+<div class="page" data-document-role="page" data-label="Лицо · подача и сеты">
 
   <div class="head">
-    <div class="head-txt">
-      <div class="kicker">Ресторан ШТОФЪ · Екатерининский</div>
-      <div class="title">Фирменные настойки</div>
-      <div class="sub">традиционного производства · выдержка 30–50 дней</div>
-    </div>
+    <div class="kicker">Ресторан ШТОФЪ · Екатерининский</div>
+    <div class="title">Фирменные настойки</div>
+    <div class="sub">традиционного производства · выдержка 30–50 дней</div>
   </div>
   <div class="hr"></div>
 
-  <div class="body">
-    <div class="left">
-      <div class="blk">
-        <div class="pf">
-          <div class="pcol">
-            <div class="lbl">Чарка</div>
-            <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">25 мл</span><span class="pd"></span><span class="pp">150 ₽</span></div>
-            <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">40 мл</span><span class="pd"></span><span class="pp">230 ₽</span></div>
-          </div>
-          <div class="pcol">
-            <div class="lbl">В бутылке</div>
-            <div class="pr pb"><span class="bw"><svg class="bt05" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,5 л</span><span class="pd"></span><span class="pp">2 400 ₽</span></div>
-            <div class="pr pb"><span class="bw"><svg class="bt07" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,7 л</span><span class="pd"></span><span class="pp">3 360 ₽</span></div>
-            <div class="pr pb"><span class="bw"><svg class="bt10" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">1 л</span><span class="pd"></span><span class="pp">4 800 ₽</span></div>
-          </div>
+  <div class="fmain">
+    <div class="fsec">
+      <div class="pf">
+        <div class="pcol">
+          <div class="lbl">Чарка</div>
+          <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">25 мл</span><span class="pd"></span><span class="pp">150 ₽</span></div>
+          <div class="pr"><svg class="g-pr" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><span class="pv">40 мл</span><span class="pd"></span><span class="pp">230 ₽</span></div>
         </div>
-        <div class="bnote">Любую настойку можно купить в фирменной бутылке навынос</div>
+        <div class="pcol">
+          <div class="lbl">В бутылке</div>
+          <div class="pr pb"><span class="bw"><svg class="bt05" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,5 л</span><span class="pd"></span><span class="pp">2 400 ₽</span></div>
+          <div class="pr pb"><span class="bw"><svg class="bt07" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">0,7 л</span><span class="pd"></span><span class="pp">3 360 ₽</span></div>
+          <div class="pr pb"><span class="bw"><svg class="bt10" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M9.5 2 H14.5 V7 C14.5 9.2 16.5 10.2 16.5 13.2 V42 C16.5 44.6 14.8 46 12 46 C9.2 46 7.5 44.6 7.5 42 V13.2 C7.5 10.2 9.5 9.2 9.5 7 Z"/></svg></span><span class="pv">1 л</span><span class="pd"></span><span class="pp">4 800 ₽</span></div>
+        </div>
       </div>
+      <div class="bnote">Любую настойку из карты можно купить в фирменной бутылке навынос — с собой или в подарок.</div>
+    </div>
 
-      <div class="blk">
-        <div class="lbl">Дегустационные сеты</div>
-        <div class="grid"><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">3 рюмки · 25 мл</div><div class="cpp">420 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">5 рюмок · 25 мл</div><div class="cpp">700 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">8 рюмок · 25 мл</div><div class="cpp">1 120 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">3 рюмки · 40 мл</div><div class="cpp">660 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">5 рюмок · 40 мл</div><div class="cpp">1 100 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">8 рюмок · 40 мл</div><div class="cpp">1 760 ₽</div></div></div>
-      </div>
+    <div class="fsec">
+      <div class="lbl">Дегустационные сеты</div>
+      <div class="grid"><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">3 рюмки · 25 мл</div><div class="cpp">420 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">5 рюмок · 25 мл</div><div class="cpp">700 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">8 рюмок · 25 мл</div><div class="cpp">1 120 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">3 рюмки · 40 мл</div><div class="cpp">660 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">5 рюмок · 40 мл</div><div class="cpp">1 100 ₽</div></div><div class="cell"><div class="cluster"><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg><svg class="gs" viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg"><path fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></svg></div><div class="cnm">8 рюмок · 40 мл</div><div class="cpp">1 760 ₽</div></div></div>
+      <div class="setnote">Каждая порция и каждый сет подаются с закуской.</div>
+    </div>
 
-      <div class="blk" style="margin-bottom:0">
-        <div class="lbl">Сигнатурные сеты</div>
+    <div class="fsec">
+      <div class="lbl">Сигнатурные сеты</div>
+      <div class="sigrow">
         <div class="sig">
           <svg class="tree-svg" viewBox="0 0 240 188" xmlns="http://www.w3.org/2000/svg"><defs><path id="tg" fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></defs><path d="M120 54 Q120 47 120 40" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 74 Q108 67 92 60" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 74 Q132 67 148 60" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 90 Q120 83 120 76" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 96 Q96 89 64 82" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 96 Q144 89 176 82" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 120 Q90 113 48 106" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 116 Q111 109 98 102" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 116 Q129 109 142 102" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 120 Q150 113 192 106" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 142 Q103 135 80 128" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M120 142 Q137 135 160 128" fill="none" stroke="#1C1A17" stroke-width="1.4" stroke-linecap="round"/><path d="M116 176 C117 150 118 92 119 46 L121 46 C122 92 123 150 124 176 Z" fill="#1C1A17"/><path d="M98 177 Q120 187 142 177" fill="none" stroke="#1C1A17" stroke-width="2" stroke-linecap="round"/><ellipse cx="120" cy="178" rx="7" ry="2.3" fill="#1C1A17"/><use href="#tg" x="112.0" y="20" width="16" height="20"/><use href="#tg" x="84.0" y="40" width="16" height="20"/><use href="#tg" x="140.0" y="40" width="16" height="20"/><use href="#tg" x="112.0" y="56" width="16" height="20"/><use href="#tg" x="56.0" y="62" width="16" height="20"/><use href="#tg" x="168.0" y="62" width="16" height="20"/><use href="#tg" x="40.0" y="86" width="16" height="20"/><use href="#tg" x="90.0" y="82" width="16" height="20"/><use href="#tg" x="134.0" y="82" width="16" height="20"/><use href="#tg" x="184.0" y="86" width="16" height="20"/><use href="#tg" x="72.0" y="108" width="16" height="20"/><use href="#tg" x="152.0" y="108" width="16" height="20"/></svg>
-          <div class="sig-cap"><div class="sn">«Пьяное дерево»</div><div class="ss">12 рюмок · 40 мл</div><div class="sp">2 600 ₽</div></div>
+          <div class="sn">«Пьяное дерево»</div><div class="ss">12 рюмок · 40 мл</div><div class="sp">2 600 ₽</div>
         </div>
         <div class="sig">
           <svg class="boat-svg" viewBox="0 0 300 134" xmlns="http://www.w3.org/2000/svg"><defs><path id="bg" fill="#1C1A17" d="M3 2 H17 C17 9.6 13.8 12.9 11 13.5 V21.4 H15 V23.2 H5 V21.4 H9 V13.5 C6.2 12.9 3 9.6 3 2 Z"/></defs><path d="M46 78 Q150 92 254 78 Q150 112 46 78 Z" fill="#1C1A17"/><path d="M46 78 C24 68 15 43 31 29 C41 20 56 25 53 36 C51 44 42 44 40 37" fill="none" stroke="#1C1A17" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M254 78 C278 68 287 46 273 33 C267 28 260 31 261 39" fill="none" stroke="#1C1A17" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><use href="#bg" x="57.5" y="64.2" width="13" height="16"/><use href="#bg" x="71.8" y="65.7" width="13" height="16"/><use href="#bg" x="86.2" y="66.9" width="13" height="16"/><use href="#bg" x="100.5" y="67.8" width="13" height="16"/><use href="#bg" x="114.8" y="68.5" width="13" height="16"/><use href="#bg" x="129.2" y="68.9" width="13" height="16"/><use href="#bg" x="143.5" y="69.0" width="13" height="16"/><use href="#bg" x="157.8" y="68.9" width="13" height="16"/><use href="#bg" x="172.2" y="68.5" width="13" height="16"/><use href="#bg" x="186.5" y="67.8" width="13" height="16"/><use href="#bg" x="200.8" y="66.9" width="13" height="16"/><use href="#bg" x="215.2" y="65.7" width="13" height="16"/><use href="#bg" x="229.5" y="64.2" width="13" height="16"/><path d="M30 120 Q58 114 86 120 T142 120 T198 120 T254 120 T284 120" fill="none" stroke="#1C1A17" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
-          <div class="sig-cap"><div class="sn">«Ладья»</div><div class="ss">28 рюмок · 40 мл</div><div class="sp">6 000 ₽</div></div>
+          <div class="sn">«Ладья»</div><div class="ss">28 рюмок · 40 мл</div><div class="sp">6 000 ₽</div>
         </div>
       </div>
     </div>
-
-    <div class="right"><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Фруктовые</span><span class="cl"></span></div><div class="it"><div class="nm">Гранат</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Яблоко</div><div class="meta">30% · сладковатая</div></div><div class="it"><div class="nm">Груша</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Вишня</div><div class="meta">28% · сладкая</div></div><div class="it"><div class="nm">Киви</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Ананас</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Манго</div><div class="meta">34% · сладковатая</div></div><div class="it"><div class="nm">Ревень</div><div class="meta">25% · полусладкая</div></div><div class="it"><div class="nm">Унаби</div><div class="meta">36% · полусладкая</div></div><div class="it"><div class="nm">Дедушкин компот</div><div class="meta">31% · полусладкая</div></div></div><div class="cat"><div class="ch"><span class="cn">Цитрусовые</span><span class="cl"></span></div><div class="it"><div class="nm">Мандарин</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Апельсин</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Грейпфрут</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Лимончелло</div><div class="meta">26% · сладкая</div></div><div class="it"><div class="nm">Лимон-имбирь</div><div class="meta">27% · полусладкая</div></div><div class="it"><div class="nm">Лимон-мята</div><div class="meta">27% · сладковатая</div></div><div class="it"><div class="nm">Лимон-клубника</div><div class="meta">25% · сладковатая</div></div></div></div><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Ягодные</span><span class="cl"></span></div><div class="it"><div class="nm">Клюква</div><div class="meta">28% · сладковатая</div></div><div class="it"><div class="nm">Брусника</div><div class="meta">29% · полусладкая</div></div><div class="it"><div class="nm">Черника</div><div class="meta">26% · сладковатая</div></div><div class="it"><div class="nm">Малина</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Клубника</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Красная смородина</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Чёрная смородина</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Голубика</div><div class="meta">24% · сладковатая</div></div><div class="it"><div class="nm">Шиповник</div><div class="meta">32% · полусладкая</div></div></div><div class="cat"><div class="ch"><span class="cn">Пряные и травяные</span><span class="cl"></span></div><div class="it"><div class="nm">Анисовая</div><div class="meta">33% · сладкая</div></div><div class="it"><div class="nm">Барбарис</div><div class="meta">37% · кисло-сладкая</div></div><div class="it"><div class="nm">Крамбамбуля</div><div class="meta">39% · пряная</div></div><div class="it"><div class="nm">Лемонграсс</div><div class="meta">30% · кисло-сладкая</div></div><div class="it"><div class="nm">Мятный ликёр</div><div class="meta">38% · сладкий</div></div></div><div class="cat"><div class="ch"><span class="cn">Острые и закусочные</span><span class="cl"></span></div><div class="it"><div class="nm">Перцовка</div><div class="meta">38% · жгучая</div></div><div class="it"><div class="nm">Хреновуха</div><div class="meta">38% · острая</div></div><div class="it"><div class="nm">Белые грибы</div><div class="meta">35% · сухая</div></div><div class="it"><div class="nm">Для самых смелых</div><div class="meta">40% · экстра-острая</div></div><div class="it"><div class="nm">Томатная с чили</div><div class="meta">38% · закусочная</div></div></div></div><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Таёжные и уральские</span><span class="cl"></span></div><div class="it"><div class="nm">Кедровая</div><div class="meta">38% · сухая</div></div><div class="it"><div class="nm">Облепиха</div><div class="meta">31% · полусладкая</div></div><div class="it"><div class="nm">Уральская</div><div class="meta">36% · полусладкая</div></div><div class="it"><div class="nm">Зубровка</div><div class="meta">38% · сухая</div></div></div><div class="cat"><div class="ch"><span class="cn">Аптечные и корневые</span><span class="cl"></span></div><div class="it"><div class="nm">Калгановка</div><div class="meta">35% · корень калгана</div></div><div class="it"><div class="nm">Лакрица</div><div class="meta">37% · корень солодки</div></div><div class="it"><div class="nm">Боярышник</div><div class="meta">30% · полусладкая</div></div><div class="it"><div class="nm">Таёжный бальзам · чага</div><div class="meta">33% · полусухая</div></div><div class="it"><div class="nm">Черноплодная с саган-дайля</div><div class="meta">36% · полусухая</div></div></div><div class="cat"><div class="ch"><span class="cn">Хлебные и ореховые</span><span class="cl"></span></div><div class="it"><div class="nm">Бородинская</div><div class="meta">30% · полусухая</div></div><div class="it"><div class="nm">Гречишная с мёдом</div><div class="meta">30% · полусладкая</div></div><div class="it"><div class="nm">Ореховая-коньячная</div><div class="meta">38% · полусухая</div></div><div class="it"><div class="nm">Макадамия сливочная</div><div class="meta">33% · сливочная</div></div></div><div class="cat"><div class="ch"><span class="cn">Медовые и десертные</span><span class="cl"></span></div><div class="it"><div class="nm">Медовая</div><div class="meta">29% · сладкая</div></div><div class="it"><div class="nm">Клубника-банан</div><div class="meta">25% · десертная</div></div><div class="it"><div class="nm">Сливочная кофейная</div><div class="meta">32% · сливочная</div></div><div class="it"><div class="nm">Банановая сливочная</div><div class="meta">32% · сливочная</div></div><div class="it"><div class="nm">Крем-кофе</div><div class="meta">28% · сливочно-кофейная</div></div></div></div></div>
   </div>
 
-  <div class="asknote">У нас всегда есть авторская настойка от нашего технолога — её ещё нет в карте, но вы можете попросить её у официанта.</div>
+  <div class="asknote">У нас всегда есть авторская настойка от нашего настоятеля — её ещё нет в карте, но вы можете попросить её у официанта.</div>
   <div class="foot">Создаём вкусные традиции&nbsp;&nbsp;·&nbsp;&nbsp;<b>ШТОФЪ</b>&nbsp;&nbsp;·&nbsp;&nbsp;Екатеринбург</div>
+
+</div>
+
+<!-- ══════════ СТРАНИЦА 2 · ОБОРОТ ══════════ -->
+<div class="page" data-document-role="page" data-label="Оборот · каталог настоек">
+
+  <div class="head">
+    <div class="kicker">Ресторан ШТОФЪ · Екатерининский</div>
+    <div class="title">Карта настоек</div>
+    <div class="sub2">чарка 25 мл — 150 ₽ · 40 мл — 230 ₽ · любая настойка — в бутылке навынос</div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="cbody"><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Таёжные и уральские</span><span class="cl"></span></div><div class="it"><div class="nm">Кедровая</div><div class="meta">38% · сухая</div></div><div class="it"><div class="nm">Облепиха</div><div class="meta">31% · полусладкая</div></div><div class="it"><div class="nm">Уральская</div><div class="meta">36% · полусладкая</div></div><div class="it"><div class="nm">Зубровка</div><div class="meta">38% · сухая</div></div></div><div class="cat"><div class="ch"><span class="cn">Ягодные</span><span class="cl"></span></div><div class="it"><div class="nm">Клюква</div><div class="meta">28% · сладковатая</div></div><div class="it"><div class="nm">Брусника</div><div class="meta">29% · полусладкая</div></div><div class="it"><div class="nm">Черника</div><div class="meta">26% · сладковатая</div></div><div class="it"><div class="nm">Малина</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Клубника</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Красная смородина</div><div class="meta">32% · сладковатая</div></div><div class="it"><div class="nm">Чёрная смородина</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Шиповник</div><div class="meta">32% · полусладкая</div></div></div><div class="cat"><div class="ch"><span class="cn">Пряные и травяные</span><span class="cl"></span></div><div class="it"><div class="nm">Анисовая</div><div class="meta">33% · сладкая</div></div><div class="it"><div class="nm">Барбарис</div><div class="meta">37% · кисло-сладкая</div></div><div class="it"><div class="nm">Крамбамбуля</div><div class="meta">39% · пряная</div></div><div class="it"><div class="nm">Лемонграсс</div><div class="meta">30% · кисло-сладкая</div></div><div class="it"><div class="nm">Мятный ликёр</div><div class="meta">38% · сладкий</div></div></div></div><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Фруктовые</span><span class="cl"></span></div><div class="it"><div class="nm">Гранат</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Яблоко</div><div class="meta">30% · сладковатая</div></div><div class="it"><div class="nm">Груша</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Вишня</div><div class="meta">28% · сладкая</div></div><div class="it"><div class="nm">Киви</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Ананас</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Манго</div><div class="meta">34% · сладковатая</div></div><div class="it"><div class="nm">Ревень</div><div class="meta">25% · полусладкая</div></div><div class="it"><div class="nm">Унаби</div><div class="meta">36% · полусладкая</div></div><div class="it"><div class="nm">Дедушкин компот</div><div class="meta">31% · полусладкая</div></div></div><div class="cat"><div class="ch"><span class="cn">Цитрусовые</span><span class="cl"></span></div><div class="it"><div class="nm">Мандарин</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Апельсин</div><div class="meta">29% · сладковатая</div></div><div class="it"><div class="nm">Грейпфрут</div><div class="meta">31% · сладковатая</div></div><div class="it"><div class="nm">Лимончелло</div><div class="meta">26% · сладкая</div></div><div class="it"><div class="nm">Лимон-имбирь</div><div class="meta">27% · полусладкая</div></div><div class="it"><div class="nm">Лимон-мята</div><div class="meta">27% · сладковатая</div></div><div class="it"><div class="nm">Лимон-клубника</div><div class="meta">25% · сладковатая</div></div></div></div><div class="ccol"><div class="cat"><div class="ch"><span class="cn">Аптечные и корневые</span><span class="cl"></span></div><div class="it"><div class="nm">Калгановка</div><div class="meta">35% · корень калгана</div></div><div class="it"><div class="nm">Лакрица</div><div class="meta">37% · корень солодки</div></div><div class="it"><div class="nm">Боярышник</div><div class="meta">30% · полусладкая</div></div><div class="it"><div class="nm">Таёжный бальзам · чага</div><div class="meta">33% · полусухая</div></div><div class="it"><div class="nm">Черноплодная с саган-дайля</div><div class="meta">36% · полусухая</div></div></div><div class="cat"><div class="ch"><span class="cn">Хлебные и ореховые</span><span class="cl"></span></div><div class="it"><div class="nm">Бородинская</div><div class="meta">30% · полусухая</div></div><div class="it"><div class="nm">Гречишная с мёдом</div><div class="meta">30% · полусладкая</div></div><div class="it"><div class="nm">Ореховая-коньячная</div><div class="meta">38% · полусухая</div></div><div class="it"><div class="nm">Макадамия сливочная</div><div class="meta">33% · сливочная</div></div></div><div class="cat"><div class="ch"><span class="cn">Острые и закусочные</span><span class="cl"></span></div><div class="it"><div class="nm">Перцовка</div><div class="meta">38% · жгучая</div></div><div class="it"><div class="nm">Хреновуха</div><div class="meta">38% · острая</div></div><div class="it"><div class="nm">Белые грибы</div><div class="meta">35% · сухая</div></div><div class="it"><div class="nm">Для самых смелых</div><div class="meta">40% · экстра-острая</div></div><div class="it"><div class="nm">Томатная с чили</div><div class="meta">38% · закусочная</div></div></div><div class="cat"><div class="ch"><span class="cn">Медовые и десертные</span><span class="cl"></span></div><div class="it"><div class="nm">Медовая</div><div class="meta">29% · сладкая</div></div><div class="it"><div class="nm">Клубника-банан</div><div class="meta">25% · десертная</div></div><div class="it"><div class="nm">Банановая сливочная</div><div class="meta">32% · сливочная</div></div><div class="it"><div class="nm">Крем-кофе</div><div class="meta">28% · сливочно-кофейная</div></div></div></div></div>
+
+  <div class="foot" style="margin-top:4mm">Создаём вкусные традиции&nbsp;&nbsp;·&nbsp;&nbsp;<b>ШТОФЪ</b>&nbsp;&nbsp;·&nbsp;&nbsp;Екатеринбург</div>
   <div class="disclaimer">В приготовлении мы используем множество натуральных ингредиентов; некоторые из них могут вызывать аллергию, в том числе мёд и орехи. Если у вас бывают нежелательные реакции на отдельные продукты, пожалуйста, предупредите официанта.</div>
 
 </div>
