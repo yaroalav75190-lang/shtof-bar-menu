@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ШТОФЪ Екатерининский — ресторан русской кухни и настоек в Екатеринбурге</title>
+<meta name="description" content="Ресторан ШТОФЪ Екатерининский в Екатеринбурге: более 56 настоек собственного производства, русская кухня, дегустационные сеты. ул. 8 Марта, 8д, ТЦ «Мытный двор». Бронирование: 8 922 619-33-33.">
+<meta property="og:title" content="ШТОФЪ Екатерининский — ресторан в Екатеринбурге">
+<meta property="og:description" content="Более 56 настоек собственного производства · русская кухня · только натуральные ингредиенты. ул. 8 Марта, 8д, ТЦ «Мытный двор».">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231C1A17'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23C9A45C' text-anchor='middle'%3EШ%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#171512;
+  --panel:#1C1A17;
+  --panel-2:#211E1A;
+  --ink:#EFE9DC;
+  --ink-soft:#CFC8B9;
+  --muted:#8C857A;
+  --gold:#C9A45C;
+  --gold-soft:#A8874A;
+  --line:rgba(207,200,185,.14);
+  --line-strong:rgba(201,164,92,.35);
+  --serif:"Lora",Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(201,164,92,.35)}
+img{max-width:100%}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:#DDBB74}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+@media(max-width:720px){section{padding:64px 0}}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(23,21,18,.86);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:baseline;gap:10px;color:var(--ink)}
+.brand b{font-size:22px;font-weight:700;letter-spacing:.14em}
+.brand b .tvz{color:var(--gold)}
+.brand .sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--gold)}
+.nav-phone{
+  font-size:13px;letter-spacing:.06em;color:var(--gold);
+  border:1px solid var(--line-strong);border-radius:3px;padding:8px 14px;white-space:nowrap;
+}
+.nav-phone:hover{background:rgba(201,164,92,.1)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:22px;height:2px;background:var(--ink-soft);margin:5px 0;transition:.25s}
+@media(max-width:920px){
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--panel);
+    border-bottom:1px solid var(--line);padding:8px 0 16px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 24px;width:100%;text-align:center}
+  .burger{display:block}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:120px 24px 64px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(1000px 500px at 50% -10%, rgba(201,164,92,.10), transparent 60%),
+    radial-gradient(800px 400px at 50% 110%, rgba(201,164,92,.06), transparent 60%),
+    var(--bg);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M36 8l4 24 24 4-24 4-4 24-4-24-24-4 24-4z' fill='none' stroke='%23C9A45C' stroke-width='.8'/%3E%3C/svg%3E");
+  background-size:72px 72px;
+}
+.hero-kicker{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+.hero h1{
+  font-size:clamp(56px,10vw,120px);
+  font-weight:700;letter-spacing:.1em;line-height:1;
+  color:var(--ink);
+}
+.hero h1 .tvz{color:var(--gold)}
+.hero-sub{
+  font-size:clamp(18px,2.6vw,26px);
+  font-style:italic;color:var(--ink-soft);margin-top:14px;letter-spacing:.06em;
+}
+.hero-rule{display:flex;align-items:center;gap:14px;margin:34px 0;color:var(--gold)}
+.hero-rule::before,.hero-rule::after{content:"";width:90px;height:1px;background:linear-gradient(to right,transparent,var(--gold-soft));display:block}
+.hero-rule::after{background:linear-gradient(to left,transparent,var(--gold-soft))}
+.hero-claim{max-width:560px;font-size:17px;color:var(--ink-soft)}
+.hero-claim b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center}
+.btn{
+  display:inline-block;padding:15px 34px;border-radius:3px;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  transition:.25s;cursor:pointer;
+}
+.btn-gold{background:var(--gold);color:#171512;border:1px solid var(--gold)}
+.btn-gold:hover{background:#DDBB74;color:#171512}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink-soft)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-meta{
+  margin-top:56px;display:flex;gap:40px;flex-wrap:wrap;justify-content:center;
+  font-size:13.5px;color:var(--muted);letter-spacing:.04em;
+}
+.hero-meta div b{display:block;color:var(--ink-soft);font-weight:500;font-size:14.5px}
+
+/* ---------- section headings ---------- */
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-kicker{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sec-title{font-size:clamp(30px,4.6vw,44px);font-weight:600;letter-spacing:.04em}
+.sec-note{color:var(--muted);font-style:italic;margin-top:10px;font-size:15px}
+.orn{color:var(--gold);letter-spacing:.6em;margin-top:16px;font-size:13px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}}
+.about-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:4px;
+  padding:36px 30px;text-align:center;
+}
+.about-card .num{font-size:44px;font-weight:700;color:var(--gold);line-height:1}
+.about-card h3{font-size:18px;font-weight:600;margin:14px 0 10px;letter-spacing:.04em}
+.about-card p{color:var(--muted);font-size:14.5px}
+.about-note{
+  margin-top:44px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto;
+  font-style:italic;color:var(--ink-soft);font-size:17px;
+}
+
+/* ---------- nastoyki ---------- */
+#nastoyki{background:var(--panel)}
+.price-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:24px;
+}
+@media(max-width:760px){.price-strip{grid-template-columns:repeat(2,1fr)}}
+.price-cell{background:var(--panel-2);padding:22px 18px;text-align:center}
+.price-cell .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.price-cell .val{font-size:24px;font-weight:600;color:var(--gold);margin-top:6px}
+.price-cell .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.takeaway{
+  border:1px solid var(--line-strong);border-radius:4px;padding:20px 26px;margin-bottom:48px;
+  text-align:center;color:var(--ink-soft);font-size:15px;background:rgba(201,164,92,.05);
+}
+.takeaway b{color:var(--gold);font-weight:600}
+.sets-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:56px}
+@media(max-width:760px){.sets-grid{grid-template-columns:1fr}}
+.set-card{background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:30px}
+.set-card h3{font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;text-align:center}
+.set-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dotted var(--line);font-size:15px}
+.set-row:last-child{border-bottom:none}
+.set-row .n{color:var(--ink-soft)}
+.set-row .p{color:var(--ink);font-weight:600;white-space:nowrap}
+.set-card .fine{margin-top:14px;font-size:13px;color:var(--muted);font-style:italic;text-align:center}
+.nast-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 40px}
+@media(max-width:840px){.nast-grid{grid-template-columns:1fr}}
+.nast-cat h4{
+  font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+  padding-bottom:10px;border-bottom:1px solid var(--line-strong);margin-bottom:12px;
+}
+.nast-item{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:15px}
+.nast-item .n{color:var(--ink);font-weight:500;white-space:nowrap}
+.nast-item .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.nast-item .d{color:var(--muted);font-size:13.5px;white-space:nowrap}
+.chip{
+  display:inline-block;font-size:10.5px;letter-spacing:.04em;color:var(--gold-soft);
+  border:1px solid rgba(201,164,92,.3);border-radius:20px;padding:0 7px;margin-left:5px;vertical-align:1px;
+}
+.nastoyatel{
+  margin-top:48px;text-align:center;max-width:680px;margin-left:auto;margin-right:auto;
+  font-style:italic;color:var(--ink-soft);font-size:16.5px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;
+}
+.allergen-note{margin-top:22px;text-align:center;font-size:12.5px;color:var(--muted)}
+
+/* ---------- tabs / menu ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px}
+.tab{
+  background:none;border:1px solid var(--line);border-radius:3px;color:var(--ink-soft);
+  font-family:var(--serif);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  padding:10px 20px;cursor:pointer;transition:.2s;
+}
+.tab:hover{border-color:var(--gold);color:var(--gold)}
+.tab.active{background:var(--gold);border-color:var(--gold);color:#171512}
+.pane{display:none}
+.pane.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.menu-cols{columns:2;column-gap:56px}
+@media(max-width:840px){.menu-cols{columns:1}}
+.menu-group{break-inside:avoid;margin-bottom:34px}
+.menu-group h4{
+  font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+  padding-bottom:10px;border-bottom:1px solid var(--line-strong);margin-bottom:14px;
+}
+.mi{padding:8px 0}
+.mi-h{display:flex;align-items:baseline;gap:10px}
+.mi-n{font-weight:500;color:var(--ink);font-size:15.5px}
+.mi-dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.mi-w{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.mi-p{color:var(--gold);font-weight:600;font-size:15.5px;white-space:nowrap;min-width:44px;text-align:right}
+.mi-d{color:var(--muted);font-size:13.5px;margin-top:2px;line-height:1.45}
+.pane-note{text-align:center;color:var(--muted);font-size:13px;font-style:italic;margin-top:26px}
+
+/* ---------- bar section bg ---------- */
+#bar{background:var(--panel)}
+
+/* ---------- contacts ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:stretch}
+@media(max-width:840px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:40px}
+.contact-item{margin-bottom:26px}
+.contact-item .lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.contact-item .val{font-size:17px;color:var(--ink)}
+.contact-item .val a{color:var(--ink)}
+.contact-item .val a:hover{color:var(--gold)}
+.contact-item .sub{font-size:14px;color:var(--muted)}
+.phone-big{font-size:26px !important;font-weight:600}
+.phone-big a{color:var(--gold) !important}
+.socials{display:flex;gap:12px;margin-top:6px}
+.soc{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);
+  border-radius:3px;padding:9px 16px;font-size:13px;letter-spacing:.08em;color:var(--ink-soft);
+}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+.map-wrap{display:flex;flex-direction:column;gap:10px}
+.map-link{font-size:13px;letter-spacing:.06em;color:var(--muted);text-align:right}
+.map-link:hover{color:var(--gold)}
+.map-frame{border:1px solid var(--line);border-radius:4px;overflow:hidden;min-height:380px;flex:1}
+.map-frame iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.35) contrast(1.02)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
+.foot-brand{font-size:18px;letter-spacing:.16em;font-weight:700}
+.foot-brand .tvz{color:var(--gold)}
+.foot-slogan{font-style:italic;color:var(--muted);font-size:14px;margin-top:8px}
+.foot-fine{color:var(--muted);font-size:12px;margin-top:18px;opacity:.7}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="ШТОФЪ Екатерининский — на главную">
+      <b>ШТОФ<span class="tvz">Ъ</span></b>
+      <span class="sub">Екатерининский</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">О ресторане</a>
+      <a href="#nastoyki">Настойки</a>
+      <a href="#kitchen">Кухня</a>
+      <a href="#bar">Бар</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+79226193333" class="nav-phone">8 922 619-33-33</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-kicker">Ресторан · Екатеринбург</div>
+  <h1>ШТОФ<span class="tvz">Ъ</span></h1>
+  <div class="hero-sub">Екатерининский</div>
+  <div class="hero-rule">❖</div>
+  <p class="hero-claim">
+    <b>Более 56 настоек собственного производства</b> — только натуральные ингредиенты,
+    выдержка 30–50 дней. Русская кухня, дегустационные сеты и вкусные традиции в самом центре города.
+  </p>
+  <div class="hero-cta">
+    <a class="btn btn-gold" href="tel:+79226193333">Забронировать стол</a>
+    <a class="btn btn-ghost" href="#nastoyki">Карта настоек</a>
+  </div>
+  <div class="hero-meta">
+    <div><b>ул. 8 Марта, 8д</b>ТЦ «Мытный двор»</div>
+    <div><b>вс–чт 12:00–00:00</b>пт–сб 12:00–02:00</div>
+    <div><b>8 922 619-33-33</b>бронирование столов</div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">О ресторане</div>
+      <h2 class="sec-title">Создаём вкусные традиции</h2>
+      <div class="orn">❖ ❖ ❖</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="num">56+</div>
+        <h3>Настоек собственного производства</h3>
+        <p>Таёжные, ягодные, пряные, хлебные и медовые — каждая настаивается от 30 до 50 дней по нашим рецептам.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="num">100%</div>
+        <h3>Натуральные ингредиенты</h3>
+        <p>Кедровый орех, уральская облепиха, мёд, ягоды и травы — без ароматизаторов и концентратов.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="num">1723</div>
+        <h3>Дух Екатерининской эпохи</h3>
+        <p>Русская кухня и гостеприимство в историческом центре Екатеринбурга — в «Мытном дворе» на 8 Марта.</p>
+      </div>
+    </div>
+    <p class="about-note reveal">
+      Уха с водкой и ушица по-царски, фирменные пельмени, стейки на гриле и медовик —
+      кухня ШТОФА соединяет русскую классику с современной подачей.
+    </p>
+  </div>
+</section>
+
+<!-- ================= NASTOYKI ================= -->
+<section id="nastoyki">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Фирменные настойки</div>
+      <h2 class="sec-title">Карта настоек</h2>
+      <p class="sec-note">традиционное производство · выдержка 30–50 дней</p>
+      <div class="orn">❖ ❖ ❖</div>
+    </div>
+
+    <div class="price-strip reveal">
+      <div class="price-cell"><div class="lbl">Чарка 25 мл</div><div class="val">150 ₽</div></div>
+      <div class="price-cell"><div class="lbl">Чарка 40 мл</div><div class="val">230 ₽</div></div>
+      <div class="price-cell"><div class="lbl">Бутылка 0,5 л</div><div class="val">2 400 ₽</div><div class="sub">0,7 л — 3 360 ₽</div></div>
+      <div class="price-cell"><div class="lbl">Бутылка 1 л</div><div class="val">4 800 ₽</div></div>
+    </div>
+    <div class="takeaway reveal">
+      Любую настойку из карты можно купить в <b>фирменной бутылке навынос</b> — с собой или в подарок.
+    </div>
+
+    <div class="sets-grid">
+      <div class="set-card reveal">
+        <h3>Дегустационные сеты</h3>
+        <div class="set-row"><span class="n">3 рюмки · 25 / 40 мл</span><span class="p">420 / 660 ₽</span></div>
+        <div class="set-row"><span class="n">5 рюмок · 25 / 40 мл</span><span class="p">700 / 1 100 ₽</span></div>
+        <div class="set-row"><span class="n">8 рюмок · 25 / 40 мл</span><span class="p">1 120 / 1 760 ₽</span></div>
+        <div class="fine">каждая порция и каждый сет подаются с закуской</div>
+      </div>
+      <div class="set-card reveal">
+        <h3>Сигнатурные сеты</h3>
+        <div class="set-row"><span class="n">«Пьяное дерево» · 12 рюмок по 40 мл</span><span class="p">2 600 ₽</span></div>
+        <div class="set-row"><span class="n">«Ладья» · 28 рюмок по 40 мл</span><span class="p">6 000 ₽</span></div>
+        <div class="fine">для большой компании — вся палитра вкусов на одной подаче</div>
+      </div>
+    </div>
+
+    <div class="nast-grid">
+      <div class="nast-cat reveal">
+        <h4>Таёжные и уральские</h4>
+        <div class="nast-item"><span class="n">Кедровая<span class="chip">орехи</span></span><span class="dots"></span><span class="d">38% · сухая</span></div>
+        <div class="nast-item"><span class="n">Облепиха<span class="chip">мёд</span></span><span class="dots"></span><span class="d">31% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Уральская<span class="chip">мёд</span></span><span class="dots"></span><span class="d">36% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Зубровка</span><span class="dots"></span><span class="d">38% · сухая</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Ягодные</h4>
+        <div class="nast-item"><span class="n">Клюква</span><span class="dots"></span><span class="d">28% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Брусника<span class="chip">мёд</span></span><span class="dots"></span><span class="d">29% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Черника</span><span class="dots"></span><span class="d">26% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Малина</span><span class="dots"></span><span class="d">32% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Клубника</span><span class="dots"></span><span class="d">32% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Красная смородина</span><span class="dots"></span><span class="d">32% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Чёрная смородина</span><span class="dots"></span><span class="d">31% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Шиповник<span class="chip">мёд</span></span><span class="dots"></span><span class="d">32% · полусладкая</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Пряные и травяные</h4>
+        <div class="nast-item"><span class="n">Анисовая</span><span class="dots"></span><span class="d">33% · сладкая</span></div>
+        <div class="nast-item"><span class="n">Барбарис</span><span class="dots"></span><span class="d">37% · кисло-сладкая</span></div>
+        <div class="nast-item"><span class="n">Крамбамбуля<span class="chip">мёд</span></span><span class="dots"></span><span class="d">39% · пряная</span></div>
+        <div class="nast-item"><span class="n">Лемонграсс</span><span class="dots"></span><span class="d">30% · кисло-сладкая</span></div>
+        <div class="nast-item"><span class="n">Мятный ликёр</span><span class="dots"></span><span class="d">38% · сладкий</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Фруктовые</h4>
+        <div class="nast-item"><span class="n">Гранат</span><span class="dots"></span><span class="d">29% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Яблоко</span><span class="dots"></span><span class="d">30% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Груша</span><span class="dots"></span><span class="d">31% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Вишня</span><span class="dots"></span><span class="d">28% · сладкая</span></div>
+        <div class="nast-item"><span class="n">Киви</span><span class="dots"></span><span class="d">31% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Ананас</span><span class="dots"></span><span class="d">29% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Манго</span><span class="dots"></span><span class="d">34% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Ревень</span><span class="dots"></span><span class="d">25% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Унаби</span><span class="dots"></span><span class="d">36% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Дедушкин компот</span><span class="dots"></span><span class="d">31% · полусладкая</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Хлебные и ореховые</h4>
+        <div class="nast-item"><span class="n">Бородинская<span class="chip">глютен</span><span class="chip">мёд</span></span><span class="dots"></span><span class="d">30% · полусухая</span></div>
+        <div class="nast-item"><span class="n">Гречишная с мёдом<span class="chip">мёд</span></span><span class="dots"></span><span class="d">30% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Ореховая-коньячная<span class="chip">орехи</span><span class="chip">мёд</span></span><span class="dots"></span><span class="d">38% · полусухая</span></div>
+        <div class="nast-item"><span class="n">Макадамия сливочная<span class="chip">орехи</span><span class="chip">молоко</span></span><span class="dots"></span><span class="d">33% · сливочная</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Медовые и десертные</h4>
+        <div class="nast-item"><span class="n">Медовая<span class="chip">мёд</span></span><span class="dots"></span><span class="d">29% · сладкая</span></div>
+        <div class="nast-item"><span class="n">Клубника-банан</span><span class="dots"></span><span class="d">25% · десертная</span></div>
+        <div class="nast-item"><span class="n">Банановая сливочная<span class="chip">молоко</span></span><span class="dots"></span><span class="d">32% · сливочная</span></div>
+        <div class="nast-item"><span class="n">Крем-кофе<span class="chip">молоко</span></span><span class="dots"></span><span class="d">28% · сливочно-кофейная</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>Цитрусовые</h4>
+        <div class="nast-item"><span class="n">Мандарин</span><span class="dots"></span><span class="d">29% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Апельсин</span><span class="dots"></span><span class="d">29% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Грейпфрут<span class="chip">мёд</span></span><span class="dots"></span><span class="d">31% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Лимончелло</span><span class="dots"></span><span class="d">26% · сладкая</span></div>
+        <div class="nast-item"><span class="n">Лимон-имбирь<span class="chip">мёд</span></span><span class="dots"></span><span class="d">27% · полусладкая</span></div>
+        <div class="nast-item"><span class="n">Лимон-мята</span><span class="dots"></span><span class="d">27% · сладковатая</span></div>
+        <div class="nast-item"><span class="n">Лимон-клубника</span><span class="dots"></span><span class="d">25% · сладковатая</span></div>
+      </div>
+      <div class="nast-cat reveal">
+        <h4>От настоятеля</h4>
+        <p style="color:var(--muted);font-size:14.5px;padding:6px 0 0">
+          У нас всегда есть авторская настойка от нашего настоятеля — её ещё нет в карте,
+          но вы можете попросить её у официанта.
+        </p>
+      </div>
+    </div>
+
+    <div class="allergen-note reveal">
+      Отметки <span class="chip">мёд</span> <span class="chip">орехи</span> <span class="chip">молоко</span> <span class="chip">глютен</span> —
+      возможные аллергены в составе. Уточняйте у официанта.
+    </div>
+  </div>
+</section>
+
+<!-- ================= KITCHEN ================= -->
+<section id="kitchen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Меню</div>
+      <h2 class="sec-title">Кухня</h2>
+      <p class="sec-note">русская классика · гриль · паста и пицца</p>
+      <div class="orn">❖ ❖ ❖</div>
+    </div>
+
+    <div class="tabs reveal" data-tabs="kitchen">
+      <button class="tab active" data-pane="k-cold">Холодные закуски</button>
+      <button class="tab" data-pane="k-hotstart">Горячие закуски и салаты</button>
+      <button class="tab" data-pane="k-soup">Супы</button>
+      <button class="tab" data-pane="k-beer">К пенному</button>
+      <button class="tab" data-pane="k-main">Горячие блюда</button>
+      <button class="tab" data-pane="k-pasta">Паста и пицца</button>
+      <button class="tab" data-pane="k-side">Гарниры и десерт</button>
+    </div>
+
+    <div class="pane active" id="k-cold">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Холодные закуски</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Брускетта с лососем</span><span class="mi-dots"></span><span class="mi-w">140 г</span><span class="mi-p">470</span></div><p class="mi-d">крем-чиз, лосось, перепелиное яйцо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Брускетта с ростбифом</span><span class="mi-dots"></span><span class="mi-w">160 г</span><span class="mi-p">490</span></div><p class="mi-d">ростбиф, вяленые томаты, соус вителло</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Брускетта с грушей</span><span class="mi-dots"></span><span class="mi-w">120 г</span><span class="mi-p">420</span></div><p class="mi-d">груша, крем-чиз, горгонзола, грецкий орех</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фалафель в булочке бао</span><span class="mi-dots"></span><span class="mi-w">350 г</span><span class="mi-p">400</span></div><p class="mi-d">нутовые котлетки, пико-де-гайо, йогурт</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сырная тарелка</span><span class="mi-dots"></span><span class="mi-w">300/40 г</span><span class="mi-p">1 200</span></div><p class="mi-d">6 видов сыра, грушевый чатни</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Мясная тарелка</span><span class="mi-dots"></span><span class="mi-w">300/90 г</span><span class="mi-p">1 500</span></div><p class="mi-d">ростбиф, прошутто, язык, чоризо, паштет</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тар-тар из лосося</span><span class="mi-dots"></span><span class="mi-w">220 г</span><span class="mi-p">1 100</span></div><p class="mi-d">лосось, каперсы, азиатская заправка</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тар-тар из телятины</span><span class="mi-dots"></span><span class="mi-w">200 г</span><span class="mi-p">900</span></div><p class="mi-d">вырезка телятины, каперсы, перепелиное яйцо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ассорти оливок и маслин</span><span class="mi-dots"></span><span class="mi-w">100 г</span><span class="mi-p">350</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Вяленые томаты</span><span class="mi-dots"></span><span class="mi-w">100 г</span><span class="mi-p">470</span></div></div>
+        </div>
+        <div class="menu-group">
+          <h4>Русский стол</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сельдь с картофелем</span><span class="mi-dots"></span><span class="mi-w">230 г</span><span class="mi-p">450</span></div><p class="mi-d">сельдь, маринованный лук, картофель бейби</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Лосось шеф-посола</span><span class="mi-dots"></span><span class="mi-w">120 г</span><span class="mi-p">850</span></div><p class="mi-d">слабосолёный лосось, каперсы</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Овощная тарелка</span><span class="mi-dots"></span><span class="mi-w">450 г</span><span class="mi-p">650</span></div><p class="mi-d">томаты, огурцы, перец, зелень</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ассорти солений</span><span class="mi-dots"></span><span class="mi-w">300 г</span><span class="mi-p">650</span></div><p class="mi-d">капуста, грибы, маринованные овощи</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сало по-домашнему</span><span class="mi-dots"></span><span class="mi-w">200/30 г</span><span class="mi-p">690</span></div><p class="mi-d">копчёное, солёное, грудинка, бородинский хлеб</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Хумус с печёным перцем</span><span class="mi-dots"></span><span class="mi-w">200 г</span><span class="mi-p">400</span></div><p class="mi-d">нут, печёный перец, подаётся с хлебом</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сет домашних намазок</span><span class="mi-dots"></span><span class="mi-w">350 г</span><span class="mi-p">650</span></div><p class="mi-d">5 паштетов, подаётся с хлебом</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Перепелиные яйца по-тайски</span><span class="mi-dots"></span><span class="mi-w">280 г</span><span class="mi-p">350</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Перепелиные яйца с кимчи</span><span class="mi-dots"></span><span class="mi-w">280 г</span><span class="mi-p">370</span></div><p class="mi-d">в пикантном азиатском маринаде</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-hotstart">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Горячие закуски</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кальмар в ореховом соусе</span><span class="mi-dots"></span><span class="mi-w">160 г</span><span class="mi-p">450</span></div><p class="mi-d">кальмар на гриле, ореховый соус, рис</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Запечённый сыр бри</span><span class="mi-dots"></span><span class="mi-w">140 г</span><span class="mi-p">750</span></div><p class="mi-d">целая головка, запечённая до мягкости</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Запечённые шампиньоны с сыром</span><span class="mi-dots"></span><span class="mi-w">210 г</span><span class="mi-p">550</span></div><p class="mi-d">шляпки, моцарелла, бекон</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Рыбные стрипсы</span><span class="mi-dots"></span><span class="mi-w">180 г</span><span class="mi-p">590</span></div><p class="mi-d">филе белой рыбы в кляре</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Салаты</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тёплый салат с баклажанами</span><span class="mi-dots"></span><span class="mi-w">220 г</span><span class="mi-p">650</span></div><p class="mi-d">баклажаны, томаты, сладкий чили</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Салат с ростбифом</span><span class="mi-dots"></span><span class="mi-w">190 г</span><span class="mi-p">710</span></div><p class="mi-d">ростбиф, овощи, соус барбекю</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тёплый салат с лососем</span><span class="mi-dots"></span><span class="mi-w">220 г</span><span class="mi-p">800</span></div><p class="mi-d">лосось, апельсин, микс салата, понзу</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Цезарь с курицей</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">750</span></div><p class="mi-d">куриное бедро су-вид</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Цезарь с креветками</span><span class="mi-dots"></span><span class="mi-w">210 г</span><span class="mi-p">950</span></div><p class="mi-d">тигровые креветки</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Салат с грушей и горгонзолой</span><span class="mi-dots"></span><span class="mi-w">190 г</span><span class="mi-p">490</span></div><p class="mi-d">груша, горгонзола, медово-горчичная заправка</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Греческий салат</span><span class="mi-dots"></span><span class="mi-w">200 г</span><span class="mi-p">800</span></div><p class="mi-d">овощи, брынза, гремолата</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Салат «Деликатесный»</span><span class="mi-dots"></span><span class="mi-w">180 г</span><span class="mi-p">630</span></div><p class="mi-d">говяжий язык, вяленые томаты</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-soup">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Супы</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Уха с водкой</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">450</span></div><p class="mi-d">двойная уха из лосося и судака</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ушица по-царски</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">650</span></div><p class="mi-d">уха из лосося со сливками</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Суп Графа Орлова</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">500</span></div><p class="mi-d">классический мясной суп</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Борщ с говядиной</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">650</span></div><p class="mi-d">на говяжьем бульоне, сметана и гренки</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тыквенный крем-суп</span><span class="mi-dots"></span><span class="mi-w">350 г</span><span class="mi-p">350</span></div><p class="mi-d">тыква, кокосовое молоко</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Мисо-суп с кимчи</span><span class="mi-dots"></span><span class="mi-w">350/50 г</span><span class="mi-p">420</span></div><p class="mi-d">мисо, вакаме, тофу, креветки, кимчи</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-beer">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Закуски к пенному</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Жареный миндаль</span><span class="mi-dots"></span><span class="mi-w">100 г</span><span class="mi-p">400</span></div><p class="mi-d">с морской солью</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Картофель фри</span><span class="mi-dots"></span><span class="mi-w">125 г</span><span class="mi-p">150</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Пивная тарелка</span><span class="mi-dots"></span><span class="mi-w">730/90 г</span><span class="mi-p">1 450</span></div><p class="mi-d">сырные палочки, кольца кальмара, куриные крылья</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чесночные гренки</span><span class="mi-dots"></span><span class="mi-w">110/30 г</span><span class="mi-p">250</span></div><p class="mi-d">бородинский хлеб, чеснок, соус цезарь</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кольца кальмара</span><span class="mi-dots"></span><span class="mi-w">120/30 г</span><span class="mi-p">600</span></div><p class="mi-d">в хрустящем кляре</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>&nbsp;</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Куриные стрипсы</span><span class="mi-dots"></span><span class="mi-w">150/30 г</span><span class="mi-p">380</span></div><p class="mi-d">в хрустящей панировке</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сырные палочки</span><span class="mi-dots"></span><span class="mi-w">150/30 г</span><span class="mi-p">350</span></div><p class="mi-d">моцарелла в панировке</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Жареный сулугуни</span><span class="mi-dots"></span><span class="mi-w">110/30 г</span><span class="mi-p">450</span></div><p class="mi-d">в панировке, брусничный соус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Креветки в соусе чили</span><span class="mi-dots"></span><span class="mi-w">210 г</span><span class="mi-p">750</span></div><p class="mi-d">острый перец, чеснок</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-main">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Горячие блюда</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фирменные пельмени ШтофЪ</span><span class="mi-dots"></span><span class="mi-w">250/30 г</span><span class="mi-p">350</span></div><p class="mi-d">в бульоне, со сметаной и зеленью</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тальята с курицей</span><span class="mi-dots"></span><span class="mi-w">270 г</span><span class="mi-p">850</span></div><p class="mi-d">филе курицы, микс салатов, соус из тунца</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тальята с телятиной</span><span class="mi-dots"></span><span class="mi-w">270 г</span><span class="mi-p">1 400</span></div><p class="mi-d">телячья вырезка, микс салатов, соус из тунца</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Мидии дорблю</span><span class="mi-dots"></span><span class="mi-w">220 г</span><span class="mi-p">1 100</span></div><p class="mi-d">сливочный соус с голубым сыром, хлеб</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Мидии чили</span><span class="mi-dots"></span><span class="mi-w">220 г</span><span class="mi-p">850</span></div><p class="mi-d">азиатский соус, хлеб</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Говяжий язык в ореховом соусе</span><span class="mi-dots"></span><span class="mi-w">190 г</span><span class="mi-p">800</span></div><p class="mi-d">отварной язык, ореховый соус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Говяжий язык с картофелем и грибами</span><span class="mi-dots"></span><span class="mi-w">320 г</span><span class="mi-p">700</span></div><p class="mi-d">мини-картофель, шампиньоны, сливочно-хреновый соус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Говяжьи щёчки с пюре</span><span class="mi-dots"></span><span class="mi-w">320 г</span><span class="mi-p">1 050</span></div><p class="mi-d">тушёные щёчки в густом соусе, картофельное пюре</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Гриль и рыба</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Стейк Рибай</span><span class="mi-dots"></span><span class="mi-w">100 г</span><span class="mi-p">1 100</span></div><p class="mi-d">мраморная говядина, гриль · цена за 100 г</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Стейк Стриплойн</span><span class="mi-dots"></span><span class="mi-w">100 г</span><span class="mi-p">800</span></div><p class="mi-d">мраморная говядина, гриль · цена за 100 г</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Лосось с овощным муссом</span><span class="mi-dots"></span><span class="mi-w">200 г</span><span class="mi-p">890</span></div><p class="mi-d">лосось, свекольный и морковный мусс</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Судак с пюре из сельдерея</span><span class="mi-dots"></span><span class="mi-w">300 г</span><span class="mi-p">1 000</span></div><p class="mi-d">филе судака, пюре из корня сельдерея</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Бефстроганов</span><span class="mi-dots"></span><span class="mi-w">270 г</span><span class="mi-p">800</span></div><p class="mi-d">говядина в сливочном соусе, картофельное пюре</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Колбаски мексиканские</span><span class="mi-dots"></span><span class="mi-w">170/30 г</span><span class="mi-p">700</span></div><p class="mi-d">острый перец, пико-де-гайо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Колбаски баварские</span><span class="mi-dots"></span><span class="mi-w">170/30 г</span><span class="mi-p">700</span></div><p class="mi-d">прованские травы</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Колбаски сливочные</span><span class="mi-dots"></span><span class="mi-w">170/30 г</span><span class="mi-p">700</span></div><p class="mi-d">сливочные, пико-де-гайо</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-pasta">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Паста</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фетучини с лососем</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">850</span></div><p class="mi-d">сливочный соус, лосось, томаты черри, сыр</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Спагетти карбонара</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">400</span></div><p class="mi-d">бекон, сливки, пармезан</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Спагетти болоньезе</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">400</span></div><p class="mi-d">мясной соус, пармезан</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фетучини с креветками</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">500</span></div><p class="mi-d">сливочный соус, креветки, томаты черри</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фетучини «Дель Фаторе»</span><span class="mi-dots"></span><span class="mi-w">300 г</span><span class="mi-p">600</span></div><p class="mi-d">курица, вяленые томаты, маслины, сливочно-сырный соус</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Пицца</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Дель Фуэго</span><span class="mi-dots"></span><span class="mi-w">540 г</span><span class="mi-p">700</span></div><p class="mi-d">чоризо, запечённый перец, соус барбекю</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Болоньезе</span><span class="mi-dots"></span><span class="mi-w">500 г</span><span class="mi-p">750</span></div><p class="mi-d">мясной соус, моцарелла, пармезан</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Неаполитано</span><span class="mi-dots"></span><span class="mi-w">410 г</span><span class="mi-p">550</span></div><p class="mi-d">томаты черри, моцарелла, пармезан, песто</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Карбонара</span><span class="mi-dots"></span><span class="mi-w">440 г</span><span class="mi-p">500</span></div><p class="mi-d">белый соус, бекон, перепелиное яйцо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Пепперони</span><span class="mi-dots"></span><span class="mi-w">450 г</span><span class="mi-p">550</span></div><p class="mi-d">пепперони, сыр, томатный соус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Барбекю</span><span class="mi-dots"></span><span class="mi-w">500 г</span><span class="mi-p">650</span></div><p class="mi-d">свинина, чоризо, бекон, лук, огурец</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="k-side">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Гарниры</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Овощи гриль</span><span class="mi-dots"></span><span class="mi-w">150 г</span><span class="mi-p">550</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Овощи гриль с моцареллой</span><span class="mi-dots"></span><span class="mi-w">260 г</span><span class="mi-p">650</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Рис басмати</span><span class="mi-dots"></span><span class="mi-w">150 г</span><span class="mi-p">350</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Картофельное пюре</span><span class="mi-dots"></span><span class="mi-w">150 г</span><span class="mi-p">300</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Драники со сметаной</span><span class="mi-dots"></span><span class="mi-w">250/30 г</span><span class="mi-p">450</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Картофель бейби</span><span class="mi-dots"></span><span class="mi-w">150 г</span><span class="mi-p">300</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Батат с пармезаном</span><span class="mi-dots"></span><span class="mi-w">150 г</span><span class="mi-p">300</span></div></div>
+        </div>
+        <div class="menu-group">
+          <h4>Хлеб и десерт</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Хлебная корзина</span><span class="mi-dots"></span><span class="mi-w">250 г</span><span class="mi-p">250</span></div><p class="mi-d">ремесленный, бородинский, булочка бао</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Медовик</span><span class="mi-dots"></span><span class="mi-w">120 г</span><span class="mi-p">420</span></div><p class="mi-d">медовые коржи, сметанный крем</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Соусы · 30 г — 70 ₽</h4>
+          <p class="mi-d" style="margin-top:8px">Песто · Медово-горчичный · Вителло · Барбекю · Сырный · Кетчуп · Свит-чили · Блю-чиз · Цезарь · Брусничный · Облепиховый конфи · Пико-де-гайо</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BAR ================= -->
+<section id="bar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Барная карта</div>
+      <h2 class="sec-title">Бар</h2>
+      <p class="sec-note">вино · крепкий алкоголь · авторские коктейли · чайная карта</p>
+      <div class="orn">❖ ❖ ❖</div>
+    </div>
+
+    <div class="tabs reveal" data-tabs="bar">
+      <button class="tab active" data-pane="b-wine">Вино</button>
+      <button class="tab" data-pane="b-strong">Крепкий алкоголь</button>
+      <button class="tab" data-pane="b-cocktail">Коктейли</button>
+      <button class="tab" data-pane="b-beer">Пиво</button>
+      <button class="tab" data-pane="b-soft">Без алкоголя</button>
+      <button class="tab" data-pane="b-tea">Чай и кофе</button>
+    </div>
+
+    <div class="pane active" id="b-wine">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Белое · бокал / бутылка</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Литтерам Пино Гриджио DOC</span><span class="mi-dots"></span><span class="mi-p">480 / 2 900</span></div><p class="mi-d">сухое · Италия, Венето · пино гриджио</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ахим Малер Рислинг</span><span class="mi-dots"></span><span class="mi-p">480 / 2 900</span></div><p class="mi-d">п/сухое · Германия · рислинг</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Колексьон Мишель Торино Торронтес</span><span class="mi-dots"></span><span class="mi-p">2 900</span></div><p class="mi-d">сухое · Аргентина, Сальта · торронтес</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Классик де Мари Манес Бордо AOP</span><span class="mi-dots"></span><span class="mi-p">4 900</span></div><p class="mi-d">сухое · Франция, Бордо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Хэрбстлихт Гевюрцтраминер</span><span class="mi-dots"></span><span class="mi-p">3 000</span></div><p class="mi-d">п/сладкое · Германия · гевюрцтраминер</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Прайамар Виньо Верде</span><span class="mi-dots"></span><span class="mi-p">2 500</span></div><p class="mi-d">п/сухое · Португалия · лоурейру, аринто</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ведерниковъ Ассамбляж</span><span class="mi-dots"></span><span class="mi-p">2 500</span></div><p class="mi-d">сухое · Россия, Долина Дона</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Высокий Берег Грюнер Велтлинер</span><span class="mi-dots"></span><span class="mi-p">2 300</span></div><p class="mi-d">сухое · Россия, Кубань · грюнер</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Гран Барон де Фори Блан</span><span class="mi-dots"></span><span class="mi-p">2 200</span></div><p class="mi-d">п/сладкое · Франция · коломбар, уни блан</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Дэсоно Шардоне</span><span class="mi-dots"></span><span class="mi-p">2 000</span></div><p class="mi-d">сухое · Россия · шардоне</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ркацители Кимериони</span><span class="mi-dots"></span><span class="mi-p">1 600</span></div><p class="mi-d">сухое · Грузия, Кахетия · ркацители</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Розе</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Шато Тамань Натюр Розе</span><span class="mi-dots"></span><span class="mi-p">330 / 1 600</span></div><p class="mi-d">сухое · Россия, Тамань</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Коно Сур Токорнал Розе</span><span class="mi-dots"></span><span class="mi-p">2 500</span></div><p class="mi-d">п/сухое · Чили · каберне совиньон, сира</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Красное · бокал / бутылка</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Саперави Каффа</span><span class="mi-dots"></span><span class="mi-p">380 / 2 000</span></div><p class="mi-d">сухое · Россия · саперави</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Баден «Шшш…» Пино Нуар</span><span class="mi-dots"></span><span class="mi-p">3 500</span></div><p class="mi-d">сухое · Германия, Баден · пино нуар</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Колексьон Мишель Торино Мальбек</span><span class="mi-dots"></span><span class="mi-p">480 / 2 900</span></div><p class="mi-d">сухое · Аргентина, Сальта · мальбек</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эль Ховард Карменер</span><span class="mi-dots"></span><span class="mi-p">2 000</span></div><p class="mi-d">сухое · Чили · карменер</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Зе Гриндер Шираз</span><span class="mi-dots"></span><span class="mi-p">3 500</span></div><p class="mi-d">сухое · ЮАР · шираз</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кастильо де Чива Темпранильо</span><span class="mi-dots"></span><span class="mi-p">2 500</span></div><p class="mi-d">п/сладкое · Испания, Валенсия · темпранильо</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эремо Кьянти Ризерва DOCG</span><span class="mi-dots"></span><span class="mi-p">3 200</span></div><p class="mi-d">сухое · Италия, Тоскана · санджовезе</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Шато О Сарик Бордо AOC</span><span class="mi-dots"></span><span class="mi-p">3 700</span></div><p class="mi-d">сухое · Франция, Бордо · каберне, мерло</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Игристое</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Делиссимо Брют Олимп</span><span class="mi-dots"></span><span class="mi-p">2 100</span></div><p class="mi-d">брют · Россия, Кубань</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Шато Тамань Пар Ла Мер Розе</span><span class="mi-dots"></span><span class="mi-p">2 300</span></div><p class="mi-d">розе брют · Россия, Тамань · пино нуар</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Морандо Просекко Экстра Драй</span><span class="mi-dots"></span><span class="mi-p">550 / 3 100</span></div><p class="mi-d">экстра драй · Италия · глера</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кава Бах Экстрисимо Брют</span><span class="mi-dots"></span><span class="mi-p">3 500</span></div><p class="mi-d">брют · Испания · макабео, чарелло</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Леопольд Леман Креман де Бордо</span><span class="mi-dots"></span><span class="mi-p">4 500</span></div><p class="mi-d">брют · Франция · традиционный метод</p></div>
+        </div>
+      </div>
+      <p class="pane-note">вино — бокал 125 мл / бутылка 0,75 л</p>
+    </div>
+
+    <div class="pane" id="b-strong">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Виски</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Джемесон</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">ирландский · тройная дистилляция</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Джек Дэниелс</span><span class="mi-dots"></span><span class="mi-p">500</span></div><p class="mi-d">Теннесси · США</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чивас Ригал 12</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">купаж премиум · Шотландия</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Гленливет 12</span><span class="mi-dots"></span><span class="mi-p">1 090</span></div><p class="mi-d">односолодовый · Спейсайд, мягкий</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Лафройг 10</span><span class="mi-dots"></span><span class="mi-p">1 190</span></div><p class="mi-d">односолодовый · Айла, торфяной</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Водка и полугар</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Тундра Аутентик</span><span class="mi-dots"></span><span class="mi-p">200</span></div><p class="mi-d">альфа, высшей очистки · хаус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чайковский Симфони</span><span class="mi-dots"></span><span class="mi-p">310</span></div><p class="mi-d">альфа, высшей очистки</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Полугар Водка</span><span class="mi-dots"></span><span class="mi-p">550</span></div><p class="mi-d">зерновая водка · мягкий вкус</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Полугар №1 Рожь и Пшеница</span><span class="mi-dots"></span><span class="mi-p">650</span></div><p class="mi-d">зерновой дистиллят · классика</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Полугар №3 Бородинский с Тмином</span><span class="mi-dots"></span><span class="mi-p">650</span></div><p class="mi-d">зерновой + тмин</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Полугар №4 Мёд и Перец</span><span class="mi-dots"></span><span class="mi-p">650</span></div><p class="mi-d">зерновой + мёд + перец</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Коньяк и бренди</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Арарат 5 лет</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">армянский · выдержка 5 лет</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Бренди Торрес 10 Гран Резерва</span><span class="mi-dots"></span><span class="mi-p">640</span></div><p class="mi-d">испанский · 10 лет</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Рулле ВС</span><span class="mi-dots"></span><span class="mi-p">720</span></div><p class="mi-d">французский коньяк · Гранд Шампань</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Текила</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Дон Рамон Силвер</span><span class="mi-dots"></span><span class="mi-p">630</span></div><p class="mi-d">100% голубая агава · Халиско</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Дон Рамон Репосадо</span><span class="mi-dots"></span><span class="mi-p">730</span></div><p class="mi-d">100% голубая агава · выдержанная</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Ром</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Карибиан Сансет Маракуйя</span><span class="mi-dots"></span><span class="mi-p">290</span></div><p class="mi-d">ароматизированный · маракуйя, манго</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Гавана Клуб Аньехо 3</span><span class="mi-dots"></span><span class="mi-p">350</span></div><p class="mi-d">светлый · Куба</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Барсело Аньехо</span><span class="mi-dots"></span><span class="mi-p">420</span></div><p class="mi-d">доминиканский · выдержка 4–6 лет</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Джин</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Локвуд Ориджинал Драй</span><span class="mi-dots"></span><span class="mi-p">220</span></div><p class="mi-d">можжевельник + розмарин</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Локвуд Берри Твист</span><span class="mi-dots"></span><span class="mi-p">220</span></div><p class="mi-d">ягодный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Хендрикс</span><span class="mi-dots"></span><span class="mi-p">790</span></div><p class="mi-d">огурец + роза · Шотландия</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Вермут и ликёры</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чинзано Бьянко</span><span class="mi-dots"></span><span class="mi-p">280</span></div><p class="mi-d">белый, ваниль · Италия</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чинзано Россо</span><span class="mi-dots"></span><span class="mi-p">280</span></div><p class="mi-d">красный, классический</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кампари</span><span class="mi-dots"></span><span class="mi-p">390</span></div><p class="mi-d">биттер · апельсин-травы</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Апероль</span><span class="mi-dots"></span><span class="mi-p">310</span></div><p class="mi-d">апельсин, ревень · 11°</p></div>
+        </div>
+      </div>
+      <p class="pane-note">крепкий алкоголь — порция 50 мл</p>
+    </div>
+
+    <div class="pane" id="b-cocktail">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Авторские коктейли</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Уральский Лес</span><span class="mi-dots"></span><span class="mi-p">580</span></div><p class="mi-d">джин · ботанический, огуречный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Штоф Нуар</span><span class="mi-dots"></span><span class="mi-p">460</span></div><p class="mi-d">ром, кампари · тёмный, горько-сладкий</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Таёжная Ягода</span><span class="mi-dots"></span><span class="mi-p">580</span></div><p class="mi-d">Полугар · брусника-черника, кислый</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Крем-Сода ШТОФЪ</span><span class="mi-dots"></span><span class="mi-p">460</span></div><p class="mi-d">Тундра · сливочно-ванильный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Барбарис Сауэр</span><span class="mi-dots"></span><span class="mi-p">470</span></div><p class="mi-d">джин · ягодный, пенный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Олдфэшн по-Уральски</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">виски, мёд · дымный, ореховый</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Грушевый Сад</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">джин · груша, свежий</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Классика</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Негрони</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">джин, кампари, вермут · горький</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Спайси Маргарита</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">текила · острый цитрусовый</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эспрессо Мартини Люкс</span><span class="mi-dots"></span><span class="mi-p">470</span></div><p class="mi-d">Тундра, кофе · кремовый</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Манго-Маракуйя</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">Гавана Клуб · тропический</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Апероль Шприц Люкс</span><span class="mi-dots"></span><span class="mi-p">520</span></div><p class="mi-d">апероль, игристое · аперитив</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Трезвый бар · 0%</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Крем-Сода 0%</span><span class="mi-dots"></span><span class="mi-p">290</span></div><p class="mi-d">сливочно-ванильный, содовая</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Манго-Маракуйя 0%</span><span class="mi-dots"></span><span class="mi-p">320</span></div><p class="mi-d">тропический, освежающий</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Земляничный Сауэр 0%</span><span class="mi-dots"></span><span class="mi-p">340</span></div><p class="mi-d">грейпфрут-земляника, пена</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Лесной Спритц 0%</span><span class="mi-dots"></span><span class="mi-p">340</span></div><p class="mi-d">ежевика-бузина, тоник</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Грушевый Сад 0%</span><span class="mi-dots"></span><span class="mi-p">330</span></div><p class="mi-d">груша-шисо, тоник</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="b-beer">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>На кране · 0,3 / 0,5 л</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Жигулёвское</span><span class="mi-dots"></span><span class="mi-p">190 / 280</span></div><p class="mi-d">светлый лагер · 4,5%</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Мальц Вайсен</span><span class="mi-dots"></span><span class="mi-p">200 / 300</span></div><p class="mi-d">пшеничное нефильтрованное · ~5%</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Амбервайс</span><span class="mi-dots"></span><span class="mi-p">210 / 310</span></div><p class="mi-d">янтарный пшеничный эль</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Велкопоповицкий Козел Черни</span><span class="mi-dots"></span><span class="mi-p">230 / 340</span></div><p class="mi-d">тёмный чешский лагер</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Шпатен</span><span class="mi-dots"></span><span class="mi-p">330 / 470</span></div><p class="mi-d">мюнхенский хеллес · Германия</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Бутылочное</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Корона Экстра</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">светлый лагер · Мексика · 0,33</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кристоффель Блонд</span><span class="mi-dots"></span><span class="mi-p">580</span></div><p class="mi-d">аббатский эль · Бельгия · 0,33</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кристоффель Дарк</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">тёмный аббатский эль · 0,33</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Стелла Артуа 0,0</span><span class="mi-dots"></span><span class="mi-p">300</span></div><p class="mi-d">безалкогольный лагер · 0,44</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="b-soft">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Морсы</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Морс клюквенный</span><span class="mi-dots"></span><span class="mi-w">400 мл</span><span class="mi-p">270</span></div><p class="mi-d">клюква · кувшин 1 л — 550</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Морс облепиховый</span><span class="mi-dots"></span><span class="mi-w">400 мл</span><span class="mi-p">270</span></div><p class="mi-d">уральская облепиха · кувшин 1 л — 550</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Холодный чай · 400 мл</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Чёрный с лимоном и мятой</span><span class="mi-dots"></span><span class="mi-p">270</span></div><p class="mi-d">кувшин 1 л — 600</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Жасминовый с грушей</span><span class="mi-dots"></span><span class="mi-p">280</span></div><p class="mi-d">кувшин 1 л — 620</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Каркадэ с апельсином</span><span class="mi-dots"></span><span class="mi-p">280</span></div><p class="mi-d">кувшин 1 л — 620</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Газировка · соки · вода</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Кока-Кола · Кола Зеро</span><span class="mi-dots"></span><span class="mi-p">330</span></div><p class="mi-d">стекло · 0,33 л</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Спрайт</span><span class="mi-dots"></span><span class="mi-p">330</span></div><p class="mi-d">стекло · 0,25 л</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Фанта</span><span class="mi-dots"></span><span class="mi-p">330</span></div><p class="mi-d">стекло · 0,25 л</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эвервесс Тоник</span><span class="mi-dots"></span><span class="mi-p">290</span></div><p class="mi-d">стекло · 0,25 л</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сок Иль Примо</span><span class="mi-dots"></span><span class="mi-p">190</span></div><p class="mi-d">яблоко / апельсин / томат / вишня · 200 мл</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Бон Аква</span><span class="mi-dots"></span><span class="mi-p">170</span></div><p class="mi-d">вода газ. / негаз. · 0,33 л</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" id="b-tea">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h4>Классический чай · чайник 0,8 л</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Ассам премиум</span><span class="mi-dots"></span><span class="mi-p">380</span></div><p class="mi-d">индийский чёрный, солодовый</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эрл Грей</span><span class="mi-dots"></span><span class="mi-p">380</span></div><p class="mi-d">чёрный с бергамотом</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Лапсанг Сушонг</span><span class="mi-dots"></span><span class="mi-p">420</span></div><p class="mi-d">копчёный чёрный · пара к виски</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Сенча</span><span class="mi-dots"></span><span class="mi-p">380</span></div><p class="mi-d">японский зелёный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Зелёный с жасмином</span><span class="mi-dots"></span><span class="mi-p">380</span></div><p class="mi-d">с бутонами жасмина</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Молочный улун</span><span class="mi-dots"></span><span class="mi-p">480</span></div><p class="mi-d">тайваньский, сливочный</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Да Хун Пао</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">утёсный улун · премиум</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Пуэр Юань</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">выдержанный тёмный · Юньнань</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Русские сборы · чайник 0,8 л</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Иван-чай</span><span class="mi-dots"></span><span class="mi-p">420</span></div><p class="mi-d">ферментированный кипрей · без кофеина</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Адмиралтейский</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">иван-чай, шишки, хвоя, смородина</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Боярский</span><span class="mi-dots"></span><span class="mi-p">450</span></div><p class="mi-d">шиповник, малина, боярышник</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Алтайский</span><span class="mi-dots"></span><span class="mi-p">420</span></div><p class="mi-d">каркадэ, шиповник, мята, фенхель</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Авторские чаи · чайник 0,9 л</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Душа Тайги</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">хвоя пихты, кедр, можжевельник</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Облепиха-Яблоко-Имбирь</span><span class="mi-dots"></span><span class="mi-p">650</span></div><p class="mi-d">облепиха, яблоко, имбирь, ананас</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Таёжный</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">вишня, можжевельник, клюква, цедра</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Альпийский со смородиной</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">смородина, яблоко, лист брусники</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Черника-Лаванда</span><span class="mi-dots"></span><span class="mi-p">590</span></div><p class="mi-d">черника, лаванда, василёк</p></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Апельсин с мятой</span><span class="mi-dots"></span><span class="mi-p">570</span></div><p class="mi-d">апельсин, мята, чёрный чай</p></div>
+        </div>
+        <div class="menu-group">
+          <h4>Кофе</h4>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Эспрессо</span><span class="mi-dots"></span><span class="mi-p">100</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Двойной эспрессо</span><span class="mi-dots"></span><span class="mi-p">150</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Американо</span><span class="mi-dots"></span><span class="mi-p">150</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Капучино</span><span class="mi-dots"></span><span class="mi-p">220</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Латте</span><span class="mi-dots"></span><span class="mi-p">240</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Флэт Уайт</span><span class="mi-dots"></span><span class="mi-p">260</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Раф классический</span><span class="mi-dots"></span><span class="mi-p">280</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Раф медовый</span><span class="mi-dots"></span><span class="mi-p">300</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Айриш Кофе</span><span class="mi-dots"></span><span class="mi-p">380</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Какао с маршмеллоу</span><span class="mi-dots"></span><span class="mi-p">220</span></div></div>
+          <div class="mi"><div class="mi-h"><span class="mi-n">Альтернативное молоко</span><span class="mi-dots"></span><span class="mi-p">+60</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTS ================= -->
+<section id="contacts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Ждём в гости</div>
+      <h2 class="sec-title">Контакты и бронирование</h2>
+      <div class="orn">❖ ❖ ❖</div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-item">
+          <div class="lbl">Бронирование столов</div>
+          <div class="val phone-big"><a href="tel:+79226193333">8 922 619-33-33</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Адрес</div>
+          <div class="val">Екатеринбург, ул. 8 Марта, 8д</div>
+          <div class="sub">ТЦ «Мытный двор»</div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Режим работы</div>
+          <div class="val">вс–чт 12:00–00:00</div>
+          <div class="val">пт–сб 12:00–02:00</div>
+        </div>
+        <div class="contact-item">
+          <div class="lbl">Мы в соцсетях</div>
+          <div class="socials">
+            <a class="soc" href="https://vk.com/club239855921" target="_blank" rel="noopener">ВКонтакте</a>
+          </div>
+        </div>
+        <a class="btn btn-gold" href="tel:+79226193333" style="width:100%;text-align:center">Забронировать стол</a>
+      </div>
+      <div class="map-wrap reveal">
+        <div class="map-frame">
+          <iframe title="ШТОФЪ Екатерининский на карте"
+            src="https://yandex.ru/map-widget/v1/?ol=biz&oid=80603702848&z=17"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a class="map-link" href="https://yandex.ru/maps/org/shtof_yekaterininskiy/80603702848/" target="_blank" rel="noopener">Открыть на Яндекс.Картах →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">ШТОФ<span class="tvz">Ъ</span> <span style="font-weight:400;font-size:13px;letter-spacing:.2em;color:var(--muted)">ЕКАТЕРИНИНСКИЙ</span></div>
+    <div class="foot-slogan">Создаём вкусные традиции</div>
+    <div class="foot-fine">Чрезмерное употребление алкоголя вредит вашему здоровью. Цены указаны в рублях и могут меняться — актуальное меню уточняйте в ресторане.</div>
+  </div>
+</footer>
+
+<script>
+// tabs
+document.querySelectorAll('[data-tabs]').forEach(function(tabbar){
+  var section = tabbar.closest('section');
+  tabbar.addEventListener('click', function(e){
+    var btn = e.target.closest('.tab');
+    if(!btn) return;
+    tabbar.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+    btn.classList.add('active');
+    section.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+    var pane = document.getElementById(btn.dataset.pane);
+    if(pane) pane.classList.add('active');
+  });
+});
+
+// mobile nav
+var burger = document.getElementById('burger');
+var navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+navLinks.addEventListener('click', function(e){
+  if(e.target.tagName === 'A') navLinks.classList.remove('open');
+});
+
+// reveal on scroll
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
