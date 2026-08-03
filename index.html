@@ -15,9 +15,221 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/oranienbaum-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lora-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Шрифты самохостятся — не зависят от доступности Google Fonts */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400i-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400i-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500i-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500i-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/lora-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/lora-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/lora-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/lora-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/lora-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/lora-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/lora-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/lora-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+  font-family: 'Oranienbaum';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/oranienbaum-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+@font-face {
+  font-family: 'Oranienbaum';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/oranienbaum-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+
+@font-face {
+  font-family: 'Oranienbaum';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/oranienbaum-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23000000'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23EACEAA' text-anchor='middle'%3EШ%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
@@ -122,6 +334,7 @@ header{
 
 /* ---------- герой ---------- */
 .hero{
+  isolation:isolate;
   min-height:100svh;display:flex;align-items:center;
   padding:130px 0 40px;position:relative;
   background:
@@ -185,7 +398,7 @@ header{
   background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 40%,rgba(0,0,0,.55));
 }
 .hero-photo .cap{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 132px 18px 22px;
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 132px 18px 22px;white-space:nowrap;
   font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);
 }
 .hero-photo .cap b{color:var(--gold);font-weight:500}
@@ -255,7 +468,7 @@ header{
 .fact div strong{display:block;color:var(--ink);font-weight:600;font-size:15px;letter-spacing:.04em}
 
 /* ---------- атмосфера: галерея ---------- */
-#atmosphere{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+#atmosphere{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:clip}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;grid-auto-rows:230px}
 @media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;gap:14px}}
 @media(max-width:520px){.gal{grid-template-columns:1fr;grid-auto-rows:250px}}
@@ -277,10 +490,10 @@ header{
 }
 
 /* ---------- настойки ---------- */
-#nastoyki{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+#nastoyki{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:clip}
 #nastoyki::before{
-  content:"НАСТОЙКИ";position:absolute;top:40px;right:-30px;
-  font-family:var(--display);font-size:clamp(90px,14vw,190px);letter-spacing:.06em;
+  content:"НАСТОЙКИ";position:absolute;top:40px;right:-60px;
+  font-family:var(--display);font-size:clamp(80px,9vw,130px);letter-spacing:.06em;
   color:transparent;-webkit-text-stroke:1px rgba(234,206,170,.09);
   pointer-events:none;user-select:none;
 }
@@ -366,11 +579,13 @@ header{
 .tab.active{color:var(--paper)}
 .tab.active::after{right:0}
 @media(max-width:720px){
+  body.scrolled .nav{height:66px}
   .tabs{flex-wrap:nowrap;overflow-x:auto;gap:0 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch;
     margin:0 -28px 36px;padding:6px 28px 0;scroll-snap-type:x proximity;
     position:sticky;top:66px;z-index:6;background:var(--bg-2)}
   .tabs::-webkit-scrollbar{display:none}
   .tab{flex:0 0 auto;scroll-snap-align:start;white-space:nowrap}
+  .tabs{mask-image:linear-gradient(90deg,#000 86%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent)}
   #kitchen .tabs{background:var(--bg)}
 }
 .pane{display:none}
@@ -394,7 +609,7 @@ header{
 .mi-d{color:var(--muted);font-size:13.5px;margin-top:2px;line-height:1.45}
 .pane-note{color:var(--muted);font-size:13px;font-style:italic;margin-top:20px}
 
-#bar{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+#bar{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:clip}
 #bar::before{
   content:"БАРЪ";position:absolute;bottom:30px;right:-20px;
   font-family:var(--display);font-size:clamp(90px,14vw,190px);letter-spacing:.06em;
@@ -462,8 +677,8 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--gold);outline-offse
 }
 .nav{transition:height .3s ease}
 body.scrolled .nav{height:56px}
-body.scrolled header{border-bottom-color:var(--line-gold)}
-#kitchen{overflow:hidden}
+body.scrolled header{border-bottom-color:var(--line-gold);background:rgba(0,0,0,.97)}
+#kitchen{overflow:clip}
 #kitchen::before{
   content:"КУХНЯ";position:absolute;top:30px;right:-20px;
   font-family:var(--display);font-size:clamp(90px,14vw,190px);letter-spacing:.06em;
@@ -522,6 +737,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
   padding:12px 20px;font-size:14px;
 }
 .skip-link:focus{left:16px;top:12px;color:#000000}
+@media(hover:none){.candle{display:none}}
 @media(prefers-reduced-motion:reduce){
   .liq,.liq-f,.liq-b,.reveal.in .seal,#nastoyki::before,#bar::before,#kitchen::before{animation:none}
   .candle{display:none}
@@ -587,7 +803,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       <div class="hero-photo">
         <img src="assets/img/hero-set.webp" width="1086" height="1448"
              alt="Дегустационный сет настоек ШТОФЪ на деревянной доске" fetchpriority="high" decoding="async">
-        <div class="cap">дегустационный сет · <b>от 3 до 28 рюмок</b></div>
+        <div class="cap">дегустационный сет · <b>3–28 рюмок</b></div>
       </div>
       <svg class="hero-bottle" viewBox="0 0 320 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -624,7 +840,6 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
           <rect x="108" y="252" width="104" height="76" stroke="#EACEAA" stroke-width="1.4" fill="#000000"/>
           <rect x="113" y="257" width="94" height="66" stroke="#EACEAA" stroke-width=".6" opacity=".6"/>
           <text x="160" y="288" text-anchor="middle" font-family="Oranienbaum,Georgia,serif" font-size="24" fill="#EACEAA" letter-spacing="2">ШТОФЪ</text>
-          <text x="160" y="310" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#9A8E7F" letter-spacing="2">НАСТОЙКА РУЧНОЙ РАБОТЫ</text>
         </g>
         <!-- чарка -->
         <path d="M262 386 L292 386 L286 420 L268 420 Z" stroke="#EACEAA" stroke-width="1.4"/>
@@ -751,11 +966,11 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       <div class="pour-grid">
         <div class="pour"><div class="lbl">Чарка 25 мл</div><div class="val">150 ₽</div></div>
         <div class="pour"><div class="lbl">Чарка 40 мл</div><div class="val">230 ₽</div></div>
-        <div class="pour"><div class="lbl">Бутылка 0,5 л</div><div class="val">2 400 ₽</div><div class="fine">0,7 л — 3 360 ₽</div></div>
+        <div class="pour"><div class="lbl">Бутылка 0,5 л</div><div class="val">2 400 ₽</div></div>
         <div class="pour"><div class="lbl">Бутылка 1 л</div><div class="val">4 800 ₽</div></div>
       </div>
       <div class="label-note">
-        Понравилась? Забирайте с собой: любая настойка — в <b>фирменной бутылке навынос</b>, себе или в подарок.
+        Понравилась? Забирайте с собой: любая настойка — в <b>фирменной бутылке навынос</b>, себе или в подарок. Есть и бутылка 0,7 л — 3 360 ₽.
       </div>
     </div>
 
@@ -869,6 +1084,10 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
+    <div class="nast-more reveal" style="margin-top:34px;text-align:center;font-style:italic;color:var(--ink-soft);font-size:15.5px">
+      Здесь — сорок два избранных вкуса. Остальные — сезонные и авторские:
+      спросите официанта, что настоялось на этой неделе.
+    </div>
     <div class="allergen-note">
       Отметки <span class="chip">мёд</span> <span class="chip">орехи</span> <span class="chip">молоко</span> <span class="chip">глютен</span> —
       возможные аллергены в составе. Уточняйте у официанта.
@@ -889,14 +1108,14 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
     </div>
 
     <div class="tabs reveal" data-tabs="kitchen" role="tablist" aria-label="Разделы меню кухни">
-      <button class="tab active" role="tab" aria-selected="true" aria-controls="k-cold" tabindex="0" data-pane="k-cold">Закуски</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="k-salad" tabindex="-1" data-pane="k-salad">Салаты и супы</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="k-main" tabindex="-1" data-pane="k-main">Горячее и гриль</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="k-pasta" tabindex="-1" data-pane="k-pasta">Паста и пицца</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="k-beer" tabindex="-1" data-pane="k-beer">К пиву и гарниры</button>
+      <button class="tab active" id="tab-k-cold" role="tab" aria-selected="true" aria-controls="k-cold" tabindex="0" data-pane="k-cold">Закуски</button>
+      <button class="tab" id="tab-k-salad" role="tab" aria-selected="false" aria-controls="k-salad" tabindex="-1" data-pane="k-salad">Салаты и супы</button>
+      <button class="tab" id="tab-k-main" role="tab" aria-selected="false" aria-controls="k-main" tabindex="-1" data-pane="k-main">Горячее и гриль</button>
+      <button class="tab" id="tab-k-pasta" role="tab" aria-selected="false" aria-controls="k-pasta" tabindex="-1" data-pane="k-pasta">Паста и пицца</button>
+      <button class="tab" id="tab-k-beer" role="tab" aria-selected="false" aria-controls="k-beer" tabindex="-1" data-pane="k-beer">К пиву и гарниры</button>
     </div>
 
-    <div class="pane active" role="tabpanel" id="k-cold">
+    <div class="pane active" role="tabpanel" id="k-cold" aria-labelledby="tab-k-cold" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Холодные закуски</h3>
@@ -933,7 +1152,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="k-salad">
+    <div class="pane" role="tabpanel" id="k-salad" aria-labelledby="tab-k-salad" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Салаты</h3>
@@ -959,7 +1178,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
     </div>
 
 
-    <div class="pane" role="tabpanel" id="k-beer">
+    <div class="pane" role="tabpanel" id="k-beer" aria-labelledby="tab-k-beer" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Закуски к пенному</h3>
@@ -998,7 +1217,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="k-main">
+    <div class="pane" role="tabpanel" id="k-main" aria-labelledby="tab-k-main" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Горячие блюда</h3>
@@ -1025,7 +1244,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="k-pasta">
+    <div class="pane" role="tabpanel" id="k-pasta" aria-labelledby="tab-k-pasta" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Паста</h3>
@@ -1063,15 +1282,15 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
     </div>
 
     <div class="tabs reveal" data-tabs="bar" role="tablist" aria-label="Разделы барной карты">
-      <button class="tab active" role="tab" aria-selected="true" aria-controls="b-wine" tabindex="0" data-pane="b-wine">Вино</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="b-strong" tabindex="-1" data-pane="b-strong">Крепкое</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="b-cocktail" tabindex="-1" data-pane="b-cocktail">Коктейли</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="b-beer" tabindex="-1" data-pane="b-beer">Пиво</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="b-soft" tabindex="-1" data-pane="b-soft">Без алкоголя</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="b-tea" tabindex="-1" data-pane="b-tea">Чай и кофе</button>
+      <button class="tab active" id="tab-b-wine" role="tab" aria-selected="true" aria-controls="b-wine" tabindex="0" data-pane="b-wine">Вино</button>
+      <button class="tab" id="tab-b-strong" role="tab" aria-selected="false" aria-controls="b-strong" tabindex="-1" data-pane="b-strong">Крепкое</button>
+      <button class="tab" id="tab-b-cocktail" role="tab" aria-selected="false" aria-controls="b-cocktail" tabindex="-1" data-pane="b-cocktail">Коктейли</button>
+      <button class="tab" id="tab-b-beer" role="tab" aria-selected="false" aria-controls="b-beer" tabindex="-1" data-pane="b-beer">Пиво</button>
+      <button class="tab" id="tab-b-soft" role="tab" aria-selected="false" aria-controls="b-soft" tabindex="-1" data-pane="b-soft">Без алкоголя</button>
+      <button class="tab" id="tab-b-tea" role="tab" aria-selected="false" aria-controls="b-tea" tabindex="-1" data-pane="b-tea">Чай и кофе</button>
     </div>
 
-    <div class="pane active" role="tabpanel" id="b-wine">
+    <div class="pane active" role="tabpanel" id="b-wine" aria-labelledby="tab-b-wine" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Белое · бокал / бутылка</h3>
@@ -1115,7 +1334,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       <p class="pane-note">вино — бокал 125 мл / бутылка 0,75 л</p>
     </div>
 
-    <div class="pane" role="tabpanel" id="b-strong">
+    <div class="pane" role="tabpanel" id="b-strong" aria-labelledby="tab-b-strong" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Виски</h3>
@@ -1168,7 +1387,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       <p class="pane-note">крепкий алкоголь — порция 50 мл</p>
     </div>
 
-    <div class="pane" role="tabpanel" id="b-cocktail">
+    <div class="pane" role="tabpanel" id="b-cocktail" aria-labelledby="tab-b-cocktail" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Авторские коктейли</h3>
@@ -1199,7 +1418,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="b-beer">
+    <div class="pane" role="tabpanel" id="b-beer" aria-labelledby="tab-b-beer" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>На кране · 0,3 / 0,5 л</h3>
@@ -1219,7 +1438,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="b-soft">
+    <div class="pane" role="tabpanel" id="b-soft" aria-labelledby="tab-b-soft" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Морсы</h3>
@@ -1244,7 +1463,7 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
       </div>
     </div>
 
-    <div class="pane" role="tabpanel" id="b-tea">
+    <div class="pane" role="tabpanel" id="b-tea" aria-labelledby="tab-b-tea" tabindex="0">
       <div class="menu-cols">
         <div class="menu-group">
           <h3>Классический чай · чайник 0,8 л</h3>
@@ -1320,9 +1539,14 @@ body.scrolled header{border-bottom-color:var(--line-gold)}
           <div class="hours-line"><span>пятница — суббота</span><span>12:00–02:00</span></div>
         </div>
         <div class="c-item">
+          <div class="lbl">Отзывы</div>
+          <div class="val" style="font-size:15px"><a href="https://yandex.ru/maps/org/shtof_yekaterininskiy/80603702848/reviews/" target="_blank" rel="noopener">Читать отзывы гостей на Яндекс.Картах →</a></div>
+        </div>
+        <div class="c-item">
           <div class="lbl">Мы в соцсетях</div>
           <div class="socials">
-            <a class="soc" href="https://vk.com/club239855921" target="_blank" rel="noopener">ВКонтакте</a>
+            <a class="soc" href="https://vk.me/club239855921" target="_blank" rel="noopener">Написать ВКонтакте</a>
+            <a class="soc" href="https://vk.com/club239855921" target="_blank" rel="noopener">Наша группа</a>
           </div>
         </div>
         <div class="c-cta">
@@ -1400,9 +1624,11 @@ document.querySelectorAll('[data-tabs]').forEach(function(tabbar){
     if(btn) activate(btn);
   });
   tabbar.addEventListener('keydown', function(e){
-    if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
     var i = tabs.indexOf(document.activeElement);
     if(i < 0) return;
+    if(e.key === 'Home'){ e.preventDefault(); activate(tabs[0], true); return; }
+    if(e.key === 'End'){ e.preventDefault(); activate(tabs[tabs.length-1], true); return; }
+    if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
     e.preventDefault();
     activate(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length], true);
   });
